@@ -7,8 +7,12 @@
 //
 
 #import "DetailPeopleViewController.h"
+#import "UIViewController+Login.h"
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
-@interface DetailPeopleViewController ()
+@interface DetailPeopleViewController () <PFLogInViewControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *personDetailImage;
 @property (weak, nonatomic) IBOutlet UILabel *personDetailName;
 @property (weak, nonatomic) IBOutlet UILabel *personDetailAboutLabel;
@@ -22,9 +26,25 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+        [self performSegueWithIdentifier:@"showMessageVCFromPpl" sender:self];
+    }];
+}
+
+- (IBAction)messageButtonPressed:(UIButton *)sender {
+    
+    if ([PFUser currentUser ]) {
+        
+        [self performSegueWithIdentifier:@"showMessageVCFromPpl" sender:self];
+    } else {
+        [self showLoginController];
+    }
+    
+    
 }
 
 /*

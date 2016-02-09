@@ -9,6 +9,9 @@
 #import "MainMenuViewController.h"
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>
+#import "UIViewController+Login.h"
+
+
 @interface MainMenuViewController () <PFLogInViewControllerDelegate>
 
 @end
@@ -52,9 +55,7 @@
         
         [self performSegueWithIdentifier:@"showProfileSegue" sender:self];
     } else {
-    PFLogInViewController *loginController = [[PFLogInViewController alloc] init];
-    loginController.delegate = self;
-    [self presentViewController:loginController animated:YES completion:nil];
+        [self showLoginController];
     }
 }
 
