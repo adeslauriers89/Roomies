@@ -35,18 +35,18 @@
 //        }];
     
     
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Player"];
-    [query whereKey:@"Name" equalTo:@"John"];
-    [query whereKey:@"Score" greaterThan:@1000];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            NSLog(@"Successfully retrieved: %@", objects);
-        } else {
-            NSLog(@"Error: %@", [error localizedDescription]);
-        }
-    }];
-    
+//    
+//    PFQuery *query = [PFQuery queryWithClassName:@"Player"];
+//    [query whereKey:@"Name" equalTo:@"John"];
+//    [query whereKey:@"Score" greaterThan:@1000];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        if (!error) {
+//            NSLog(@"Successfully retrieved: %@", objects);
+//        } else {
+//            NSLog(@"Error: %@", [error localizedDescription]);
+//        }
+//    }];
+//    
     return YES;
 }
 

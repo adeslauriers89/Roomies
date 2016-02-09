@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5C7BE215574CE88A56DCA2D3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA47A6244639B8483D48AB6 /* Pods.framework */; };
+		A674B41B1C69738A00B09F57 /* PeopleCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A674B41A1C69738A00B09F57 /* PeopleCustomTableViewCell.m */; };
+		A674B41D1C69800A00B09F57 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A674B41C1C69800A00B09F57 /* MapKit.framework */; };
 		A683FE911C68ED740027C720 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FE901C68ED740027C720 /* main.m */; };
 		A683FE941C68ED740027C720 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FE931C68ED740027C720 /* AppDelegate.m */; };
 		A683FE971C68ED740027C720 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FE961C68ED740027C720 /* LoginViewController.m */; };
@@ -22,7 +24,7 @@
 		A683FECF1C68F3800027C720 /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FECE1C68F3800027C720 /* PeopleViewController.m */; };
 		A683FED41C6962410027C720 /* DetailPeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FED31C6962410027C720 /* DetailPeopleViewController.m */; };
 		A683FED71C69625C0027C720 /* DetailRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FED61C69625C0027C720 /* DetailRoomViewController.m */; };
-		A683FEDB1C69655E0027C720 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FEDA1C69655E0027C720 /* CustomTableViewCell.m */; };
+		A683FEDB1C69655E0027C720 /* RoomCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FEDA1C69655E0027C720 /* RoomCustomTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,9 @@
 /* Begin PBXFileReference section */
 		302EE848CEEE5F35D983A09F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8857A49DB50FC13692C91EAF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A674B4191C69738A00B09F57 /* PeopleCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleCustomTableViewCell.h; sourceTree = "<group>"; };
+		A674B41A1C69738A00B09F57 /* PeopleCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleCustomTableViewCell.m; sourceTree = "<group>"; };
+		A674B41C1C69800A00B09F57 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A683FE8C1C68ED740027C720 /* Roomies2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roomies2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A683FE901C68ED740027C720 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A683FE921C68ED740027C720 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,8 +78,8 @@
 		A683FED31C6962410027C720 /* DetailPeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPeopleViewController.m; sourceTree = "<group>"; };
 		A683FED51C69625C0027C720 /* DetailRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailRoomViewController.h; sourceTree = "<group>"; };
 		A683FED61C69625C0027C720 /* DetailRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailRoomViewController.m; sourceTree = "<group>"; };
-		A683FED91C69655E0027C720 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
-		A683FEDA1C69655E0027C720 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		A683FED91C69655E0027C720 /* RoomCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomCustomTableViewCell.h; sourceTree = "<group>"; };
+		A683FEDA1C69655E0027C720 /* RoomCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomCustomTableViewCell.m; sourceTree = "<group>"; };
 		FDA47A6244639B8483D48AB6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A674B41D1C69800A00B09F57 /* MapKit.framework in Frameworks */,
 				5C7BE215574CE88A56DCA2D3 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,8 +231,10 @@
 		A683FED81C6965220027C720 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A683FED91C69655E0027C720 /* CustomTableViewCell.h */,
-				A683FEDA1C69655E0027C720 /* CustomTableViewCell.m */,
+				A683FED91C69655E0027C720 /* RoomCustomTableViewCell.h */,
+				A683FEDA1C69655E0027C720 /* RoomCustomTableViewCell.m */,
+				A674B4191C69738A00B09F57 /* PeopleCustomTableViewCell.h */,
+				A674B41A1C69738A00B09F57 /* PeopleCustomTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 		BD6DCCCC2152CC06833FF5D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A674B41C1C69800A00B09F57 /* MapKit.framework */,
 				FDA47A6244639B8483D48AB6 /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -420,6 +429,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A674B41B1C69738A00B09F57 /* PeopleCustomTableViewCell.m in Sources */,
 				A683FE971C68ED740027C720 /* LoginViewController.m in Sources */,
 				A683FECF1C68F3800027C720 /* PeopleViewController.m in Sources */,
 				A683FED71C69625C0027C720 /* DetailRoomViewController.m in Sources */,
@@ -428,7 +438,7 @@
 				A683FE911C68ED740027C720 /* main.m in Sources */,
 				A683FEC91C68F0E00027C720 /* MainMenuViewController.m in Sources */,
 				A683FED41C6962410027C720 /* DetailPeopleViewController.m in Sources */,
-				A683FEDB1C69655E0027C720 /* CustomTableViewCell.m in Sources */,
+				A683FEDB1C69655E0027C720 /* RoomCustomTableViewCell.m in Sources */,
 				A683FECC1C68F3750027C720 /* RoomsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,8 +7,18 @@
 //
 
 #import "RoomsViewController.h"
+#import <MapKit/MapKit.h>
 
-@interface RoomsViewController () <UITableViewDataSource>
+#define zoomingMapArea 91000
+
+
+@interface RoomsViewController () <UITableViewDataSource, MKMapViewDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *roomSegmentControl;
+@property (nonatomic, strong) CLLocation *vancouverLocation;
+
+
 
 @end
 
@@ -17,6 +27,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    
+    [self.mapView setHidden:YES];
+}
+
+-(void)initiateMap{
+    
+    CLLocationCoordinate2D zoomLocation = CLLocationCoordinate2DMake(49.28, 123.12);
+    
+    MKCoordinateRegion adjustedRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, zoomingMapArea, zoomingMapArea);
+    
+    [_mapView setRegion:adjustedRegion animated:YES];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,6 +62,32 @@
     return cell;
 }
 
+- (IBAction)sorterSelected:(UISegmentedControl *)sender {
+    
+    if (sender.selectedSegmentIndex == 0) {
+        [self.mapView setHidden:YES];
+        [self.tableView setHidden:NO];
+    } else {
+        [self.tableView setHidden:YES];
+        [self.mapView setHidden:NO];
+        [self initiateMap];
+    }
+    
+    
+
+//        if (sender.selectedSegmentIndex == 0) {
+//            self.data = [self unsortedPhotos];
+//        } else if (sender.selectedSegmentIndex == 1) {
+//            self.data = [self photosSortedBySubject];
+//        } else {
+//            self.data = [self photosSortedByLocation];
+//        }
+//        
+//        [self.collectionView reloadData];
+    
+    
+    
+}
 
 /*
 #pragma mark - Navigation

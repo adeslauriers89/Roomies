@@ -9,6 +9,8 @@
 #import "DetailRoomViewController.h"
 
 @interface DetailRoomViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *roomDetailScrollView;
+@property (weak, nonatomic) IBOutlet UIStackView *roomDetailStackView;
 
 @end
 
