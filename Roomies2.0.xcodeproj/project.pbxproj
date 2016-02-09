@@ -1,0 +1,681 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C7BE215574CE88A56DCA2D3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA47A6244639B8483D48AB6 /* Pods.framework */; };
+		A683FE911C68ED740027C720 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FE901C68ED740027C720 /* main.m */; };
+		A683FE941C68ED740027C720 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FE931C68ED740027C720 /* AppDelegate.m */; };
+		A683FE971C68ED740027C720 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FE961C68ED740027C720 /* LoginViewController.m */; };
+		A683FE9A1C68ED740027C720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A683FE981C68ED740027C720 /* Main.storyboard */; };
+		A683FE9C1C68ED740027C720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A683FE9B1C68ED740027C720 /* Assets.xcassets */; };
+		A683FE9F1C68ED740027C720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A683FE9D1C68ED740027C720 /* LaunchScreen.storyboard */; };
+		A683FEAA1C68ED740027C720 /* Roomies2_0Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FEA91C68ED740027C720 /* Roomies2_0Tests.m */; };
+		A683FEB51C68ED740027C720 /* Roomies2_0UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FEB41C68ED740027C720 /* Roomies2_0UITests.m */; };
+		A683FEC41C68EF0C0027C720 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FEC31C68EF0C0027C720 /* SignupViewController.m */; };
+		A683FEC91C68F0E00027C720 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FEC81C68F0E00027C720 /* MainMenuViewController.m */; };
+		A683FECC1C68F3750027C720 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FECB1C68F3750027C720 /* RoomsViewController.m */; };
+		A683FECF1C68F3800027C720 /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FECE1C68F3800027C720 /* PeopleViewController.m */; };
+		A683FED41C6962410027C720 /* DetailPeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FED31C6962410027C720 /* DetailPeopleViewController.m */; };
+		A683FED71C69625C0027C720 /* DetailRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FED61C69625C0027C720 /* DetailRoomViewController.m */; };
+		A683FEDB1C69655E0027C720 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FEDA1C69655E0027C720 /* CustomTableViewCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A683FEA61C68ED740027C720 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A683FE841C68ED740027C720 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A683FE8B1C68ED740027C720;
+			remoteInfo = Roomies2.0;
+		};
+		A683FEB11C68ED740027C720 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A683FE841C68ED740027C720 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A683FE8B1C68ED740027C720;
+			remoteInfo = Roomies2.0;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		302EE848CEEE5F35D983A09F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		8857A49DB50FC13692C91EAF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A683FE8C1C68ED740027C720 /* Roomies2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roomies2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A683FE901C68ED740027C720 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A683FE921C68ED740027C720 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A683FE931C68ED740027C720 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A683FE951C68ED740027C720 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		A683FE961C68ED740027C720 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		A683FE991C68ED740027C720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A683FE9B1C68ED740027C720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A683FE9E1C68ED740027C720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A683FEA01C68ED740027C720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A683FEA51C68ED740027C720 /* Roomies2.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Roomies2.0Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A683FEA91C68ED740027C720 /* Roomies2_0Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Roomies2_0Tests.m; sourceTree = "<group>"; };
+		A683FEAB1C68ED740027C720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A683FEB01C68ED740027C720 /* Roomies2.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Roomies2.0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A683FEB41C68ED740027C720 /* Roomies2_0UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Roomies2_0UITests.m; sourceTree = "<group>"; };
+		A683FEB61C68ED740027C720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A683FEC21C68EF0C0027C720 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		A683FEC31C68EF0C0027C720 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		A683FEC71C68F0E00027C720 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		A683FEC81C68F0E00027C720 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		A683FECA1C68F3750027C720 /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsViewController.h; sourceTree = "<group>"; };
+		A683FECB1C68F3750027C720 /* RoomsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomsViewController.m; sourceTree = "<group>"; };
+		A683FECD1C68F3800027C720 /* PeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleViewController.h; sourceTree = "<group>"; };
+		A683FECE1C68F3800027C720 /* PeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleViewController.m; sourceTree = "<group>"; };
+		A683FED21C6962410027C720 /* DetailPeopleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailPeopleViewController.h; sourceTree = "<group>"; };
+		A683FED31C6962410027C720 /* DetailPeopleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailPeopleViewController.m; sourceTree = "<group>"; };
+		A683FED51C69625C0027C720 /* DetailRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailRoomViewController.h; sourceTree = "<group>"; };
+		A683FED61C69625C0027C720 /* DetailRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailRoomViewController.m; sourceTree = "<group>"; };
+		A683FED91C69655E0027C720 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		A683FEDA1C69655E0027C720 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		FDA47A6244639B8483D48AB6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A683FE891C68ED740027C720 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C7BE215574CE88A56DCA2D3 /* Pods.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A683FEA21C68ED740027C720 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A683FEAD1C68ED740027C720 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		198C2DF1E67D11F896F6F3B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				302EE848CEEE5F35D983A09F /* Pods.debug.xcconfig */,
+				8857A49DB50FC13692C91EAF /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A683FE831C68ED740027C720 = {
+			isa = PBXGroup;
+			children = (
+				A683FE8E1C68ED740027C720 /* Roomies2.0 */,
+				A683FEA81C68ED740027C720 /* Roomies2.0Tests */,
+				A683FEB31C68ED740027C720 /* Roomies2.0UITests */,
+				A683FE8D1C68ED740027C720 /* Products */,
+				198C2DF1E67D11F896F6F3B9 /* Pods */,
+				BD6DCCCC2152CC06833FF5D0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A683FE8D1C68ED740027C720 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A683FE8C1C68ED740027C720 /* Roomies2.0.app */,
+				A683FEA51C68ED740027C720 /* Roomies2.0Tests.xctest */,
+				A683FEB01C68ED740027C720 /* Roomies2.0UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A683FE8E1C68ED740027C720 /* Roomies2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				A683FED81C6965220027C720 /* Views */,
+				A683FED01C6962070027C720 /* Rooms */,
+				A683FED11C69621B0027C720 /* People */,
+				A683FEC61C68EFF00027C720 /* Model */,
+				A683FEC51C68EFCD0027C720 /* Login/Signup */,
+				A683FE981C68ED740027C720 /* Main.storyboard */,
+				A683FEC71C68F0E00027C720 /* MainMenuViewController.h */,
+				A683FEC81C68F0E00027C720 /* MainMenuViewController.m */,
+				A683FE9B1C68ED740027C720 /* Assets.xcassets */,
+				A683FE9D1C68ED740027C720 /* LaunchScreen.storyboard */,
+				A683FEA01C68ED740027C720 /* Info.plist */,
+				A683FE8F1C68ED740027C720 /* Supporting Files */,
+			);
+			path = Roomies2.0;
+			sourceTree = "<group>";
+		};
+		A683FE8F1C68ED740027C720 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A683FE901C68ED740027C720 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A683FEA81C68ED740027C720 /* Roomies2.0Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A683FEA91C68ED740027C720 /* Roomies2_0Tests.m */,
+				A683FEAB1C68ED740027C720 /* Info.plist */,
+			);
+			path = Roomies2.0Tests;
+			sourceTree = "<group>";
+		};
+		A683FEB31C68ED740027C720 /* Roomies2.0UITests */ = {
+			isa = PBXGroup;
+			children = (
+				A683FEB41C68ED740027C720 /* Roomies2_0UITests.m */,
+				A683FEB61C68ED740027C720 /* Info.plist */,
+			);
+			path = Roomies2.0UITests;
+			sourceTree = "<group>";
+		};
+		A683FEC51C68EFCD0027C720 /* Login/Signup */ = {
+			isa = PBXGroup;
+			children = (
+				A683FE951C68ED740027C720 /* LoginViewController.h */,
+				A683FE961C68ED740027C720 /* LoginViewController.m */,
+				A683FEC21C68EF0C0027C720 /* SignupViewController.h */,
+				A683FEC31C68EF0C0027C720 /* SignupViewController.m */,
+			);
+			name = Login/Signup;
+			sourceTree = "<group>";
+		};
+		A683FEC61C68EFF00027C720 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A683FE921C68ED740027C720 /* AppDelegate.h */,
+				A683FE931C68ED740027C720 /* AppDelegate.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A683FED01C6962070027C720 /* Rooms */ = {
+			isa = PBXGroup;
+			children = (
+				A683FECA1C68F3750027C720 /* RoomsViewController.h */,
+				A683FECB1C68F3750027C720 /* RoomsViewController.m */,
+				A683FED51C69625C0027C720 /* DetailRoomViewController.h */,
+				A683FED61C69625C0027C720 /* DetailRoomViewController.m */,
+			);
+			name = Rooms;
+			sourceTree = "<group>";
+		};
+		A683FED11C69621B0027C720 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				A683FECD1C68F3800027C720 /* PeopleViewController.h */,
+				A683FECE1C68F3800027C720 /* PeopleViewController.m */,
+				A683FED21C6962410027C720 /* DetailPeopleViewController.h */,
+				A683FED31C6962410027C720 /* DetailPeopleViewController.m */,
+			);
+			name = People;
+			sourceTree = "<group>";
+		};
+		A683FED81C6965220027C720 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A683FED91C69655E0027C720 /* CustomTableViewCell.h */,
+				A683FEDA1C69655E0027C720 /* CustomTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BD6DCCCC2152CC06833FF5D0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDA47A6244639B8483D48AB6 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A683FE8B1C68ED740027C720 /* Roomies2.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A683FEB91C68ED740027C720 /* Build configuration list for PBXNativeTarget "Roomies2.0" */;
+			buildPhases = (
+				A81E8E217E572741B8E57582 /* Check Pods Manifest.lock */,
+				A683FE881C68ED740027C720 /* Sources */,
+				A683FE891C68ED740027C720 /* Frameworks */,
+				A683FE8A1C68ED740027C720 /* Resources */,
+				B73FA0DAA4148ABECB0BDC40 /* Embed Pods Frameworks */,
+				F4E63234F2C21B5A86FB3DCF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Roomies2.0;
+			productName = Roomies2.0;
+			productReference = A683FE8C1C68ED740027C720 /* Roomies2.0.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A683FEA41C68ED740027C720 /* Roomies2.0Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A683FEBC1C68ED740027C720 /* Build configuration list for PBXNativeTarget "Roomies2.0Tests" */;
+			buildPhases = (
+				A683FEA11C68ED740027C720 /* Sources */,
+				A683FEA21C68ED740027C720 /* Frameworks */,
+				A683FEA31C68ED740027C720 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A683FEA71C68ED740027C720 /* PBXTargetDependency */,
+			);
+			name = Roomies2.0Tests;
+			productName = Roomies2.0Tests;
+			productReference = A683FEA51C68ED740027C720 /* Roomies2.0Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A683FEAF1C68ED740027C720 /* Roomies2.0UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A683FEBF1C68ED740027C720 /* Build configuration list for PBXNativeTarget "Roomies2.0UITests" */;
+			buildPhases = (
+				A683FEAC1C68ED740027C720 /* Sources */,
+				A683FEAD1C68ED740027C720 /* Frameworks */,
+				A683FEAE1C68ED740027C720 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A683FEB21C68ED740027C720 /* PBXTargetDependency */,
+			);
+			name = Roomies2.0UITests;
+			productName = Roomies2.0UITests;
+			productReference = A683FEB01C68ED740027C720 /* Roomies2.0UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A683FE841C68ED740027C720 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Adam DesLauriers & Thiago Heitling";
+				TargetAttributes = {
+					A683FE8B1C68ED740027C720 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					A683FEA41C68ED740027C720 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = A683FE8B1C68ED740027C720;
+					};
+					A683FEAF1C68ED740027C720 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = A683FE8B1C68ED740027C720;
+					};
+				};
+			};
+			buildConfigurationList = A683FE871C68ED740027C720 /* Build configuration list for PBXProject "Roomies2.0" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A683FE831C68ED740027C720;
+			productRefGroup = A683FE8D1C68ED740027C720 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A683FE8B1C68ED740027C720 /* Roomies2.0 */,
+				A683FEA41C68ED740027C720 /* Roomies2.0Tests */,
+				A683FEAF1C68ED740027C720 /* Roomies2.0UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A683FE8A1C68ED740027C720 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A683FE9F1C68ED740027C720 /* LaunchScreen.storyboard in Resources */,
+				A683FE9C1C68ED740027C720 /* Assets.xcassets in Resources */,
+				A683FE9A1C68ED740027C720 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A683FEA31C68ED740027C720 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A683FEAE1C68ED740027C720 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A81E8E217E572741B8E57582 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B73FA0DAA4148ABECB0BDC40 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4E63234F2C21B5A86FB3DCF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A683FE881C68ED740027C720 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A683FE971C68ED740027C720 /* LoginViewController.m in Sources */,
+				A683FECF1C68F3800027C720 /* PeopleViewController.m in Sources */,
+				A683FED71C69625C0027C720 /* DetailRoomViewController.m in Sources */,
+				A683FE941C68ED740027C720 /* AppDelegate.m in Sources */,
+				A683FEC41C68EF0C0027C720 /* SignupViewController.m in Sources */,
+				A683FE911C68ED740027C720 /* main.m in Sources */,
+				A683FEC91C68F0E00027C720 /* MainMenuViewController.m in Sources */,
+				A683FED41C6962410027C720 /* DetailPeopleViewController.m in Sources */,
+				A683FEDB1C69655E0027C720 /* CustomTableViewCell.m in Sources */,
+				A683FECC1C68F3750027C720 /* RoomsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A683FEA11C68ED740027C720 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A683FEAA1C68ED740027C720 /* Roomies2_0Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A683FEAC1C68ED740027C720 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A683FEB51C68ED740027C720 /* Roomies2_0UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A683FEA71C68ED740027C720 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A683FE8B1C68ED740027C720 /* Roomies2.0 */;
+			targetProxy = A683FEA61C68ED740027C720 /* PBXContainerItemProxy */;
+		};
+		A683FEB21C68ED740027C720 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A683FE8B1C68ED740027C720 /* Roomies2.0 */;
+			targetProxy = A683FEB11C68ED740027C720 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A683FE981C68ED740027C720 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A683FE991C68ED740027C720 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A683FE9D1C68ED740027C720 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A683FE9E1C68ED740027C720 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A683FEB71C68ED740027C720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A683FEB81C68ED740027C720 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A683FEBA1C68ED740027C720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 302EE848CEEE5F35D983A09F /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Roomies2.0/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xcode.Roomies2-0";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A683FEBB1C68ED740027C720 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8857A49DB50FC13692C91EAF /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Roomies2.0/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xcode.Roomies2-0";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A683FEBD1C68ED740027C720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Roomies2.0Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xcode.Roomies2-0Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Roomies2.0.app/Roomies2.0";
+			};
+			name = Debug;
+		};
+		A683FEBE1C68ED740027C720 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Roomies2.0Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xcode.Roomies2-0Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Roomies2.0.app/Roomies2.0";
+			};
+			name = Release;
+		};
+		A683FEC01C68ED740027C720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Roomies2.0UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xcode.Roomies2-0UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Roomies2.0;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		A683FEC11C68ED740027C720 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Roomies2.0UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "xcode.Roomies2-0UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Roomies2.0;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A683FE871C68ED740027C720 /* Build configuration list for PBXProject "Roomies2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A683FEB71C68ED740027C720 /* Debug */,
+				A683FEB81C68ED740027C720 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A683FEB91C68ED740027C720 /* Build configuration list for PBXNativeTarget "Roomies2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A683FEBA1C68ED740027C720 /* Debug */,
+				A683FEBB1C68ED740027C720 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A683FEBC1C68ED740027C720 /* Build configuration list for PBXNativeTarget "Roomies2.0Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A683FEBD1C68ED740027C720 /* Debug */,
+				A683FEBE1C68ED740027C720 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A683FEBF1C68ED740027C720 /* Build configuration list for PBXNativeTarget "Roomies2.0UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A683FEC01C68ED740027C720 /* Debug */,
+				A683FEC11C68ED740027C720 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A683FE841C68ED740027C720 /* Project object */;
+}
