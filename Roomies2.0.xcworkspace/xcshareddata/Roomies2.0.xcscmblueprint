@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "33E80735BFB45731D4629B3B129B1CA0BCC297F3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "33E80735BFB45731D4629B3B129B1CA0BCC297F3" : 0,
+    "AF7A206D65046427C3CE8D2E1DD1F9FF708CF61F" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "824B93BE-FFB6-47DE-8DCB-FED90AAF1E1E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "33E80735BFB45731D4629B3B129B1CA0BCC297F3" : "Roomies2.0\/",
+    "AF7A206D65046427C3CE8D2E1DD1F9FF708CF61F" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Roomies2.0",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Roomies2.0.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/adeslauriers89\/Roomies.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "33E80735BFB45731D4629B3B129B1CA0BCC297F3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/adeslauriers89\/iOS-prep-assignments.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AF7A206D65046427C3CE8D2E1DD1F9FF708CF61F"
+    }
+  ]
+}
