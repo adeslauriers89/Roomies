@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CustomTableViewCell.h
 //  Roomies2.0
 //
 //  Created by Adam DesLauriers on 2016-02-08.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
-
+@interface RoomCustomTableViewCell : UITableViewCell
 
 @end
-

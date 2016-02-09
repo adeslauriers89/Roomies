@@ -9,7 +9,7 @@
 #import "RoomsViewController.h"
 #import <MapKit/MapKit.h>
 
-#define zoomingMapArea 91000
+#define zoomingMapArea 4000
 
 
 @interface RoomsViewController () <UITableViewDataSource, MKMapViewDelegate>
@@ -35,7 +35,7 @@
 
 -(void)initiateMap{
     
-    CLLocationCoordinate2D zoomLocation = CLLocationCoordinate2DMake(49.28, 123.12);
+    CLLocationCoordinate2D zoomLocation = CLLocationCoordinate2DMake(49.28, -123.12);
     
     MKCoordinateRegion adjustedRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, zoomingMapArea, zoomingMapArea);
     
@@ -52,7 +52,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
-    return 1;
+    return 4;
 }
 
 
@@ -75,16 +75,6 @@
     
     
 
-//        if (sender.selectedSegmentIndex == 0) {
-//            self.data = [self unsortedPhotos];
-//        } else if (sender.selectedSegmentIndex == 1) {
-//            self.data = [self photosSortedBySubject];
-//        } else {
-//            self.data = [self photosSortedByLocation];
-//        }
-//        
-//        [self.collectionView reloadData];
-    
     
     
 }

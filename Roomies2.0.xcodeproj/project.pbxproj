@@ -8,17 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		5C7BE215574CE88A56DCA2D3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA47A6244639B8483D48AB6 /* Pods.framework */; };
+		A62E3E121C6A734200D440B5 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62E3E111C6A734200D440B5 /* MyProfileViewController.m */; };
+		A62E3E151C6A73C400D440B5 /* SendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62E3E141C6A73C400D440B5 /* SendMessageViewController.m */; };
+		A62E3E181C6A828C00D440B5 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = A62E3E171C6A828C00D440B5 /* Room.m */; };
+		A62E3E1B1C6A82BF00D440B5 /* RoomieUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A62E3E1A1C6A82BF00D440B5 /* RoomieUser.m */; };
 		A674B41B1C69738A00B09F57 /* PeopleCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A674B41A1C69738A00B09F57 /* PeopleCustomTableViewCell.m */; };
 		A674B41D1C69800A00B09F57 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A674B41C1C69800A00B09F57 /* MapKit.framework */; };
+		A67D770F1C6997D0008F4A11 /* AddRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67D770E1C6997D0008F4A11 /* AddRoomViewController.m */; };
 		A683FE911C68ED740027C720 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FE901C68ED740027C720 /* main.m */; };
 		A683FE941C68ED740027C720 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FE931C68ED740027C720 /* AppDelegate.m */; };
-		A683FE971C68ED740027C720 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FE961C68ED740027C720 /* LoginViewController.m */; };
 		A683FE9A1C68ED740027C720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A683FE981C68ED740027C720 /* Main.storyboard */; };
 		A683FE9C1C68ED740027C720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A683FE9B1C68ED740027C720 /* Assets.xcassets */; };
 		A683FE9F1C68ED740027C720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A683FE9D1C68ED740027C720 /* LaunchScreen.storyboard */; };
 		A683FEAA1C68ED740027C720 /* Roomies2_0Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FEA91C68ED740027C720 /* Roomies2_0Tests.m */; };
 		A683FEB51C68ED740027C720 /* Roomies2_0UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FEB41C68ED740027C720 /* Roomies2_0UITests.m */; };
-		A683FEC41C68EF0C0027C720 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FEC31C68EF0C0027C720 /* SignupViewController.m */; };
 		A683FEC91C68F0E00027C720 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FEC81C68F0E00027C720 /* MainMenuViewController.m */; };
 		A683FECC1C68F3750027C720 /* RoomsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FECB1C68F3750027C720 /* RoomsViewController.m */; };
 		A683FECF1C68F3800027C720 /* PeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FECE1C68F3800027C720 /* PeopleViewController.m */; };
@@ -47,15 +50,23 @@
 /* Begin PBXFileReference section */
 		302EE848CEEE5F35D983A09F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8857A49DB50FC13692C91EAF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A62E3E101C6A734200D440B5 /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
+		A62E3E111C6A734200D440B5 /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
+		A62E3E131C6A73C400D440B5 /* SendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMessageViewController.h; sourceTree = "<group>"; };
+		A62E3E141C6A73C400D440B5 /* SendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessageViewController.m; sourceTree = "<group>"; };
+		A62E3E161C6A828C00D440B5 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
+		A62E3E171C6A828C00D440B5 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
+		A62E3E191C6A82BF00D440B5 /* RoomieUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomieUser.h; sourceTree = "<group>"; };
+		A62E3E1A1C6A82BF00D440B5 /* RoomieUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomieUser.m; sourceTree = "<group>"; };
 		A674B4191C69738A00B09F57 /* PeopleCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleCustomTableViewCell.h; sourceTree = "<group>"; };
 		A674B41A1C69738A00B09F57 /* PeopleCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleCustomTableViewCell.m; sourceTree = "<group>"; };
 		A674B41C1C69800A00B09F57 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A67D770D1C6997D0008F4A11 /* AddRoomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddRoomViewController.h; sourceTree = "<group>"; };
+		A67D770E1C6997D0008F4A11 /* AddRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddRoomViewController.m; sourceTree = "<group>"; };
 		A683FE8C1C68ED740027C720 /* Roomies2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roomies2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A683FE901C68ED740027C720 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A683FE921C68ED740027C720 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A683FE931C68ED740027C720 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A683FE951C68ED740027C720 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		A683FE961C68ED740027C720 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A683FE991C68ED740027C720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A683FE9B1C68ED740027C720 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A683FE9E1C68ED740027C720 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,8 +77,6 @@
 		A683FEB01C68ED740027C720 /* Roomies2.0UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Roomies2.0UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A683FEB41C68ED740027C720 /* Roomies2_0UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Roomies2_0UITests.m; sourceTree = "<group>"; };
 		A683FEB61C68ED740027C720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A683FEC21C68EF0C0027C720 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
-		A683FEC31C68EF0C0027C720 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		A683FEC71C68F0E00027C720 /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
 		A683FEC81C68F0E00027C720 /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
 		A683FECA1C68F3750027C720 /* RoomsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomsViewController.h; sourceTree = "<group>"; };
@@ -148,7 +157,6 @@
 				A683FED01C6962070027C720 /* Rooms */,
 				A683FED11C69621B0027C720 /* People */,
 				A683FEC61C68EFF00027C720 /* Model */,
-				A683FEC51C68EFCD0027C720 /* Login/Signup */,
 				A683FE981C68ED740027C720 /* Main.storyboard */,
 				A683FEC71C68F0E00027C720 /* MainMenuViewController.h */,
 				A683FEC81C68F0E00027C720 /* MainMenuViewController.m */,
@@ -186,20 +194,13 @@
 			path = Roomies2.0UITests;
 			sourceTree = "<group>";
 		};
-		A683FEC51C68EFCD0027C720 /* Login/Signup */ = {
-			isa = PBXGroup;
-			children = (
-				A683FE951C68ED740027C720 /* LoginViewController.h */,
-				A683FE961C68ED740027C720 /* LoginViewController.m */,
-				A683FEC21C68EF0C0027C720 /* SignupViewController.h */,
-				A683FEC31C68EF0C0027C720 /* SignupViewController.m */,
-			);
-			name = Login/Signup;
-			sourceTree = "<group>";
-		};
 		A683FEC61C68EFF00027C720 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A62E3E161C6A828C00D440B5 /* Room.h */,
+				A62E3E171C6A828C00D440B5 /* Room.m */,
+				A62E3E191C6A82BF00D440B5 /* RoomieUser.h */,
+				A62E3E1A1C6A82BF00D440B5 /* RoomieUser.m */,
 				A683FE921C68ED740027C720 /* AppDelegate.h */,
 				A683FE931C68ED740027C720 /* AppDelegate.m */,
 			);
@@ -213,6 +214,8 @@
 				A683FECB1C68F3750027C720 /* RoomsViewController.m */,
 				A683FED51C69625C0027C720 /* DetailRoomViewController.h */,
 				A683FED61C69625C0027C720 /* DetailRoomViewController.m */,
+				A67D770D1C6997D0008F4A11 /* AddRoomViewController.h */,
+				A67D770E1C6997D0008F4A11 /* AddRoomViewController.m */,
 			);
 			name = Rooms;
 			sourceTree = "<group>";
@@ -224,6 +227,10 @@
 				A683FECE1C68F3800027C720 /* PeopleViewController.m */,
 				A683FED21C6962410027C720 /* DetailPeopleViewController.h */,
 				A683FED31C6962410027C720 /* DetailPeopleViewController.m */,
+				A62E3E101C6A734200D440B5 /* MyProfileViewController.h */,
+				A62E3E111C6A734200D440B5 /* MyProfileViewController.m */,
+				A62E3E131C6A73C400D440B5 /* SendMessageViewController.h */,
+				A62E3E141C6A73C400D440B5 /* SendMessageViewController.m */,
 			);
 			name = People;
 			sourceTree = "<group>";
@@ -429,13 +436,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A62E3E181C6A828C00D440B5 /* Room.m in Sources */,
+				A62E3E1B1C6A82BF00D440B5 /* RoomieUser.m in Sources */,
 				A674B41B1C69738A00B09F57 /* PeopleCustomTableViewCell.m in Sources */,
-				A683FE971C68ED740027C720 /* LoginViewController.m in Sources */,
+				A62E3E121C6A734200D440B5 /* MyProfileViewController.m in Sources */,
 				A683FECF1C68F3800027C720 /* PeopleViewController.m in Sources */,
 				A683FED71C69625C0027C720 /* DetailRoomViewController.m in Sources */,
 				A683FE941C68ED740027C720 /* AppDelegate.m in Sources */,
-				A683FEC41C68EF0C0027C720 /* SignupViewController.m in Sources */,
+				A62E3E151C6A73C400D440B5 /* SendMessageViewController.m in Sources */,
 				A683FE911C68ED740027C720 /* main.m in Sources */,
+				A67D770F1C6997D0008F4A11 /* AddRoomViewController.m in Sources */,
 				A683FEC91C68F0E00027C720 /* MainMenuViewController.m in Sources */,
 				A683FED41C6962410027C720 /* DetailPeopleViewController.m in Sources */,
 				A683FEDB1C69655E0027C720 /* RoomCustomTableViewCell.m in Sources */,

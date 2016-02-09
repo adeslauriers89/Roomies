@@ -1,21 +1,19 @@
 //
-//  DetailPeopleViewController.m
+//  MyProfileViewController.m
 //  Roomies2.0
 //
-//  Created by Adam DesLauriers on 2016-02-08.
+//  Created by Adam DesLauriers on 2016-02-09.
 //  Copyright © 2016 Adam DesLauriers & Thiago Heitling. All rights reserved.
 //
 
-#import "DetailPeopleViewController.h"
+#import "MyProfileViewController.h"
+#import <Parse/Parse.h>
 
-@interface DetailPeopleViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *personDetailImage;
-@property (weak, nonatomic) IBOutlet UILabel *personDetailName;
-@property (weak, nonatomic) IBOutlet UILabel *personDetailAboutLabel;
+@interface MyProfileViewController ()
 
 @end
 
-@implementation DetailPeopleViewController
+@implementation MyProfileViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,5 +34,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)logoutButtonPressed:(UIBarButtonItem *)sender {
+    
+    [PFUser logOut];
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

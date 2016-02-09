@@ -1,21 +1,18 @@
 //
-//  DetailPeopleViewController.m
+//  SentMessageViewController.m
 //  Roomies2.0
 //
-//  Created by Adam DesLauriers on 2016-02-08.
+//  Created by Adam DesLauriers on 2016-02-09.
 //  Copyright © 2016 Adam DesLauriers & Thiago Heitling. All rights reserved.
 //
 
-#import "DetailPeopleViewController.h"
+#import "SendMessageViewController.h"
 
-@interface DetailPeopleViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *personDetailImage;
-@property (weak, nonatomic) IBOutlet UILabel *personDetailName;
-@property (weak, nonatomic) IBOutlet UILabel *personDetailAboutLabel;
+@interface SendMessageViewController ()
 
 @end
 
-@implementation DetailPeopleViewController
+@implementation SendMessageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

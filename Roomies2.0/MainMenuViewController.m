@@ -7,8 +7,9 @@
 //
 
 #import "MainMenuViewController.h"
-
-@interface MainMenuViewController ()
+#import <ParseUI/ParseUI.h>
+#import <Parse/Parse.h>
+@interface MainMenuViewController () <PFLogInViewControllerDelegate>
 
 @end
 
@@ -33,5 +34,28 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{
+    [self dismissViewControllerAnimated:YES completion:^{
+    
+    [self performSegueWithIdentifier:@"showProfileSegue" sender:self];
+    }];
+}
+
+- (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(nullable NSError *)error{
+    
+}
+
+- (IBAction)myProfileButtonPressed:(UIButton *)sender {
+    
+    if ([PFUser currentUser ]) {
+        
+        [self performSegueWithIdentifier:@"showProfileSegue" sender:self];
+    } else {
+    PFLogInViewController *loginController = [[PFLogInViewController alloc] init];
+    loginController.delegate = self;
+    [self presentViewController:loginController animated:YES completion:nil];
+    }
+}
 
 @end

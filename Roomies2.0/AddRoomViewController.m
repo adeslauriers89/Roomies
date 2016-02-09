@@ -1,25 +1,23 @@
 //
-//  SignupViewController.m
+//  AddRoomViewController.m
 //  Roomies2.0
 //
 //  Created by Adam DesLauriers on 2016-02-08.
 //  Copyright © 2016 Adam DesLauriers & Thiago Heitling. All rights reserved.
 //
 
-#import "SignupViewController.h"
+#import "AddRoomViewController.h"
 #import <Parse/Parse.h>
 
-@interface SignupViewController ()
+@interface AddRoomViewController ()
 
 @end
 
-@implementation SignupViewController
+@implementation AddRoomViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,5 +34,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)cancelButtonPressed:(UIButton *)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 @end
