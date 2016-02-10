@@ -375,7 +375,7 @@
             </objects>
             <point key="canvasLocation" x="3254.5" y="1134.5"/>
         </scene>
-        <!--Add Room View Controller-->
+        <!--Title-->
         <scene sceneID="Y0c-FN-AMf">
             <objects>
                 <viewController id="HSz-BI-H5C" customClass="AddRoomViewController" sceneMemberID="viewController">
@@ -387,12 +387,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euY-HF-yyL">
-                                <rect key="frame" x="69" y="583" width="57" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euY-HF-yyL">
+                                <rect key="frame" x="77" y="502.5" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitButtonPressed:" destination="HSz-BI-H5C" eventType="touchUpInside" id="ddb-BF-IfG"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEO-h0-4Yl">
-                                <rect key="frame" x="156" y="299" width="62" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nice-room" translatesAutoresizingMaskIntoConstraints="NO" id="Lpi-U7-Kwm">
+                                <rect key="frame" x="77.5" y="74" width="220" height="208.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Lpi-U7-Kwm" secondAttribute="height" multiplier="240:227" id="Cow-nq-e3Z"/>
+                                    <constraint firstAttribute="width" constant="220" id="hZq-1J-tKL"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ufh-cV-Lah">
+                                <rect key="frame" x="77" y="297.5" width="220" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="room description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fDJ-kP-N12">
+                                <rect key="frame" x="77" y="342.5" width="220" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="gNI-Lm-R3x"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lYM-o4-Z8t">
+                                <rect key="frame" x="77" y="457.5" width="220" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEO-h0-4Yl">
+                                <rect key="frame" x="249" y="502.5" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancelButtonPressed:" destination="HSz-BI-H5C" eventType="touchUpInside" id="U7Z-gT-F8O"/>
@@ -400,8 +429,40 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fDJ-kP-N12" firstAttribute="width" secondItem="Ufh-cV-Lah" secondAttribute="width" id="27P-Wi-xG2"/>
+                            <constraint firstItem="lYM-o4-Z8t" firstAttribute="top" secondItem="fDJ-kP-N12" secondAttribute="bottom" constant="15" id="FuZ-ly-sF7"/>
+                            <constraint firstItem="fDJ-kP-N12" firstAttribute="top" secondItem="Ufh-cV-Lah" secondAttribute="bottom" constant="15" id="H4S-DY-wNJ"/>
+                            <constraint firstItem="lYM-o4-Z8t" firstAttribute="width" secondItem="fDJ-kP-N12" secondAttribute="width" id="ICX-L4-mlO"/>
+                            <constraint firstItem="euY-HF-yyL" firstAttribute="leading" secondItem="lYM-o4-Z8t" secondAttribute="leading" id="M0j-nv-9Y5"/>
+                            <constraint firstItem="Ufh-cV-Lah" firstAttribute="centerX" secondItem="tc7-iI-gDJ" secondAttribute="centerX" id="Obr-Mn-2WR"/>
+                            <constraint firstItem="Ufh-cV-Lah" firstAttribute="width" secondItem="Lpi-U7-Kwm" secondAttribute="width" id="SJU-rM-WgL"/>
+                            <constraint firstItem="fDJ-kP-N12" firstAttribute="centerX" secondItem="tc7-iI-gDJ" secondAttribute="centerX" id="ZrM-5L-bf4"/>
+                            <constraint firstItem="euY-HF-yyL" firstAttribute="top" secondItem="lYM-o4-Z8t" secondAttribute="bottom" constant="15" id="e6W-cN-P41"/>
+                            <constraint firstItem="Lpi-U7-Kwm" firstAttribute="top" secondItem="3re-Nm-dOX" secondAttribute="bottom" constant="10" id="ggL-sY-C0m"/>
+                            <constraint firstItem="rEO-h0-4Yl" firstAttribute="trailing" secondItem="lYM-o4-Z8t" secondAttribute="trailing" id="jV7-Xu-3Sp"/>
+                            <constraint firstItem="rEO-h0-4Yl" firstAttribute="top" secondItem="lYM-o4-Z8t" secondAttribute="bottom" constant="15" id="kSV-4W-UlO"/>
+                            <constraint firstItem="Ufh-cV-Lah" firstAttribute="top" secondItem="Lpi-U7-Kwm" secondAttribute="bottom" constant="15" id="rlF-ig-eZJ"/>
+                            <constraint firstItem="Lpi-U7-Kwm" firstAttribute="centerX" secondItem="tc7-iI-gDJ" secondAttribute="centerX" id="tcI-qc-ekU"/>
+                            <constraint firstItem="lYM-o4-Z8t" firstAttribute="centerX" secondItem="tc7-iI-gDJ" secondAttribute="centerX" id="uaL-zs-w6r"/>
+                        </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="eQr-ad-9bM">
+                        <barButtonItem key="rightBarButtonItem" title="Add image" id="RKR-RO-Zd3">
+                            <connections>
+                                <action selector="addImageButtonPressed:" destination="HSz-BI-H5C" id="Jiu-3a-kjq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageToUpload" destination="Lpi-U7-Kwm" id="WzO-ZR-lVh"/>
+                        <outlet property="roomDescription" destination="fDJ-kP-N12" id="Dab-p8-SOB"/>
+                        <outlet property="roomPrice" destination="lYM-o4-Z8t" id="pG5-iy-FtD"/>
+                        <outlet property="roomTitle" destination="Ufh-cV-Lah" id="1Gu-3F-SuS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNQ-TB-GKQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -508,7 +569,7 @@
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ylw-2o-T1L">
                             <connections>
-                                <segue destination="HSz-BI-H5C" kind="presentation" id="cef-EH-hI6"/>
+                                <segue destination="HSz-BI-H5C" kind="show" id="cef-EH-hI6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -10,4 +10,20 @@
 
 @implementation Room
 
+@dynamic roomDetails;
+@dynamic price;
+@dynamic roomImage;
+@dynamic roomTitle;
+@dynamic roomUser;
+
++(void)load {
+    [self registerSubclass];
+}
+
+
++ (NSString *)parseClassName {
+    
+    return @"Room";
+}
+
 @end
