@@ -7,7 +7,18 @@
 //
 
 #import <Parse/Parse.h>
+#import <UIKit/UIKit.h>
 
-@interface RoomieUser : PFUser
+@interface RoomieUser : PFObject
+//<PFSubclassing> //thiago added  <PFsubclassing>
+
+@property (nonatomic) NSString *userName;
+@property (nonatomic) NSString *userDetails;
+@property (nonatomic) UIImage *userImage;
+@property (nonatomic) NSDate *dateStartedLooking;
+@property (nonatomic, strong) NSMutableArray *roomsArray;
+@property (nonatomic) BOOL showMeOnList;
+
+
 
 @end

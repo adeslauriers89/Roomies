@@ -7,7 +7,12 @@
 //
 
 #import <Parse/Parse.h>
+#import <UIKit/UIKit.h>
 
 @interface Room : PFObject
+
+@property (nonatomic) NSString *roomDetails;
+@property (nonatomic) NSString *price;
+@property (nonatomic) UIImage *roomImage;
 
 @end
