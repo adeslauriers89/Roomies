@@ -13,7 +13,8 @@
 
 @interface DetailPeopleViewController () <PFLogInViewControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *personDetailImage;
+@property (weak, nonatomic) IBOutlet PFImageView *personDetailImage;
+
 @property (weak, nonatomic) IBOutlet UILabel *personDetailName;
 @property (weak, nonatomic) IBOutlet UILabel *personDetailAboutLabel;
 
@@ -23,7 +24,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+    self.personDetailName.text = [self.user objectForKey:@"fullName"];
+    self.personDetailAboutLabel.text = [self.user objectForKey:@"userDetails"];
+    PFFile *img = [self.user objectForKey:@"userImage"];
+    [img getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (data) {
+            UIImage *userImage = [UIImage imageWithData:data];
+            self.personDetailImage.image = userImage;
+        }
+    }];
+    
 }
 
 

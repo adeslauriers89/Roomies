@@ -7,8 +7,14 @@
 //
 
 #import "PeopleViewController.h"
+#import <Parse/Parse.h>
+#import "PeopleCustomTableViewCell.h"
+#import "DetailPeopleViewController.h"
 
 @interface PeopleViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) NSMutableArray *peopleArray;
 
 @end
 
@@ -16,7 +22,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    PFQuery *query = [PFUser query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *  objects, NSError *  error) {
+        
+        if (!error) {
+            self.peopleArray  = [objects mutableCopy];
+            [self.tableView reloadData];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:[error userInfo][@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+        }
+        
+        //NSLog(@"%@",self.peopleArray);
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,24 +46,48 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
-    return 6;
+    return self.peopleArray.count;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath ];
+    PeopleCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath ];
+    PFUser *individual = self.peopleArray[indexPath.row];
+
+    
+    cell.personNameLabel.text = individual[@"fullName"];
+    cell.personLookingForLabel.text = individual[@"userDetails"];
+    //cell.peopleImageView.file = [individual objectForKey: @"userImage"];
+    PFFile *img = [individual objectForKey:@"userImage"];
+    [img getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (data) {
+            UIImage *userImage = [UIImage imageWithData:data];
+            cell.peopleImageView.image = userImage;
+        }
+    }];
+    
+//    PFFile *thumbnail = [user objectForKey:@"userImage"];
+//    [thumbnail getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+//        if (data) {
+//            UIImage *userImage = [UIImage imageWithData:data];
+//            self.profileImage.image = userImage;
+//        }
+//    }];
+    
+    
     
     return cell;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"showPersonDVC"]) {
+        DetailPeopleViewController *dvc = [segue destinationViewController];
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        PFUser *individual = self.peopleArray[indexPath.row];
+        dvc.user = individual;
+        
+    }
 }
-*/
 
 @end

@@ -7,12 +7,10 @@
 //
 
 #import "RoomCustomTableViewCell.h"
+#import "Room.h"
 
 @interface RoomCustomTableViewCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *roomImageView;
-@property (weak, nonatomic) IBOutlet UILabel *roomPriceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *roomDescriptionLabel;
 
 
 @end
@@ -20,13 +18,20 @@
 @implementation RoomCustomTableViewCell : UITableViewCell
 
 - (void)awakeFromNib {
-    // Initialization code
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
+
+//-(void)configureWithRoom:(Room *)room {
+//    
+//    self.roomImageView.image = room.roomImage;
+//    [self.roomImageView loadInBackground];
+//    self.roomPriceLabel.text = room.price;
+//    self.roomDescriptionLabel.text = room.roomTitle;
+//}
 
 @end

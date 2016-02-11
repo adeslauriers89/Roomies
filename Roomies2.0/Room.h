@@ -16,6 +16,7 @@
 @property (nonatomic) NSString *price;
 @property (nonatomic) UIImage *roomImage;
 @property (nonatomic) NSString *roomTitle;
+
 @property PFUser *roomUser;
 
 @end

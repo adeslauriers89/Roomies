@@ -9,9 +9,6 @@
 #import "PeopleCustomTableViewCell.h"
 
 @interface PeopleCustomTableViewCell ()
-@property (weak, nonatomic) IBOutlet UIImageView *peopleImageView;
-@property (weak, nonatomic) IBOutlet UILabel *personNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *personLookingForLabel;
 
 @end
 

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ParseUI/ParseUI.h>
 
 @interface RoomCustomTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet PFImageView *roomImageView;
+@property (weak, nonatomic) IBOutlet UILabel *roomPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *roomDescriptionLabel;
 
 @end

@@ -21,32 +21,6 @@
     
     [Parse setApplicationId:@"IjcTgq7KqvJ98ihU6WWzmadFBpgn1ypK2bDZmiVy" clientKey:@"P4g1GPpjbBI2otjGBMzC6fP0Xsd7ySvoP8NN2V0j"];
     
-//        PFObject *player = [PFObject objectWithClassName:@"Player"];
-//        player[@"Name"] = @"John";
-//        player[@"Score"] = @1230;
-//        [player saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//            if (succeeded) {
-//                NSLog(@"Object Uploaded");
-//            }
-//            else {
-//                NSString *errorString =[[error userInfo] objectForKey:@"error"];
-//                NSLog(@"Error: %@", errorString);
-//            }
-//        }];
-    
-    
-//    
-//    PFQuery *query = [PFQuery queryWithClassName:@"Player"];
-//    [query whereKey:@"Name" equalTo:@"John"];
-//    [query whereKey:@"Score" greaterThan:@1000];
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        if (!error) {
-//            NSLog(@"Successfully retrieved: %@", objects);
-//        } else {
-//            NSLog(@"Error: %@", [error localizedDescription]);
-//        }
-//    }];
-//    
     return YES;
 }
 

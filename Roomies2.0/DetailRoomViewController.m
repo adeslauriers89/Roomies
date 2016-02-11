@@ -12,9 +12,12 @@
 #import <ParseUI/ParseUI.h>
 
 @interface DetailRoomViewController () <PFLogInViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet PFImageView *roomImageView;
+@property (weak, nonatomic) IBOutlet UILabel *roomPrice;
+@property (weak, nonatomic) IBOutlet UITextView *roomDetailTextView;
+@property (weak, nonatomic) IBOutlet UILabel *roomDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *roomCityLabel;
 
-@property (weak, nonatomic) IBOutlet UIScrollView *roomDetailScrollView;
-@property (weak, nonatomic) IBOutlet UIStackView *roomDetailStackView;
 
 @end
 
@@ -22,7 +25,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    NSString *dollarSign = @"$";
+    NSString *perMonth = @"/Month";
+    
+    self.roomPrice.text = [[dollarSign stringByAppendingString:self.room.price] stringByAppendingString:perMonth];
+    self.roomDetailTextView.text = self.room.roomDetails;
+    self.roomImageView.file = [self.room objectForKey:@"roomImage"];
+    
+    NSLog(@"%@", self.room.roomImage);
+    
+    
+  
 }
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user{

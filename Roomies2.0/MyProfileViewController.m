@@ -8,9 +8,10 @@
 
 #import "MyProfileViewController.h"
 #import <Parse/Parse.h>
-#import "RoomieUser.h"
 
-@interface MyProfileViewController ()
+
+@interface MyProfileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UITextField *profileNameTextField;
 @property (weak, nonatomic) IBOutlet UITextView *profileDetailsTextView;
@@ -27,7 +28,10 @@
     
     self.canEditProfile = NO;
     
+    
+    
     PFUser *user = [PFUser currentUser];
+    
     
     self.profileNameTextField.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"fullName"]];
     
@@ -42,22 +46,7 @@
         }
     }];
     
-    
-    
-//    
-//    PFFile *thumbnail = [myObject objectForKey:@"image"];
-//    NSData *imageData = [thumbnail getData];
-//    UIImage *image = [UIImage imageWithData:imageData];
-//    
-//    PFQuery *query = [PFUser query];
-//    [query whereKey:@"fullName" equalTo:];
-//    [query getObjectInBackgroundWithId:[[PFUser currentUser] objectId] block:^(PFObject * _Nullable object, NSError * _Nullable error) {
-//        
-//    }];
-//    
-    
-    
-    
+
     self.profileDetailsTextView.layer.borderWidth = 1.0;
     self.profileDetailsTextView.layer.borderColor = [UIColor lightGrayColor].CGColor;
     self.profileDetailsTextView.layer.cornerRadius = 5.0;
@@ -103,8 +92,14 @@
         user[@"fullName"] = self.profileNameTextField.text;
         user[@"userDetails"] = self.profileDetailsTextView.text;
         
-        NSData *imgData = UIImagePNGRepresentation([UIImage imageNamed:@"Adam"]);
-        PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imgData];
+        double compressionRatio = 1;
+        NSData *pictureData = UIImagePNGRepresentation(self.profileImage.image);
+        while ([pictureData length]>500000) {
+            compressionRatio = compressionRatio*0.5;
+            pictureData = UIImageJPEGRepresentation(self.profileImage.image, compressionRatio);
+        }
+        
+        PFFile *imageFile = [PFFile fileWithName:@"image.png" data:pictureData];
         user[@"userImage"] = imageFile;
         
         
@@ -119,6 +114,7 @@
             }
         }];
     }
+    
 }
 - (IBAction)editButtonPressed:(UIBarButtonItem *)sender {
     
@@ -140,8 +136,19 @@
     }];
     
 }
+- (IBAction)changeImageButtonPressed:(UIButton *)sender {
+    
+    UIImagePickerController *imgPicker = [[UIImagePickerController alloc]init];
+    imgPicker.delegate = self;
+    imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self.navigationController presentViewController:imgPicker animated:YES completion:nil];
+}
 
-
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    self.profileImage.image = info[UIImagePickerControllerOriginalImage];
+}
 
 
 @end

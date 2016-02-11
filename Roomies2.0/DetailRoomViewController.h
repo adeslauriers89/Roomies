@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Room.h"
 
 @interface DetailRoomViewController : UIViewController
+
+@property (nonatomic, strong) Room *room;
 
 @end

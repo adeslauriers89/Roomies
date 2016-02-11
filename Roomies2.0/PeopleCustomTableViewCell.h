@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <ParseUI/ParseUI.h>
 
 @interface PeopleCustomTableViewCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet PFImageView *peopleImageView;
+@property (weak, nonatomic) IBOutlet UILabel *personNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *personLookingForLabel;
+
 
 @end

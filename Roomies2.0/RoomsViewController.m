@@ -8,6 +8,10 @@
 
 #import "RoomsViewController.h"
 #import <MapKit/MapKit.h>
+#import <Parse/Parse.h>
+#import "RoomCustomTableViewCell.h"
+#import "Room.h"
+#import "DetailRoomViewController.h"
 
 #define zoomingMapArea 4000
 
@@ -17,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *roomSegmentControl;
 @property (nonatomic, strong) CLLocation *vancouverLocation;
+@property (nonatomic, strong) NSMutableArray *roomsArray;
 
 
 
@@ -24,14 +29,47 @@
 
 @implementation RoomsViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Room"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        self.roomsArray = [objects mutableCopy];
+        [self.tableView reloadData];
+        
+    }];
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    
-    
+  
     [self.mapView setHidden:YES];
+    
+    
 }
+
+
+//- (void)fetchSeafoodTypesWithCompletion:(void (^)(NSMutableArray *seafoodTypes))handler {
+//    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
+//        PFQuery *typeQuery = [PFQuery queryWithClassName:@"Seafood_Type"];
+//        NSArray *fetchedObjects = [typeQuery findObjects];
+//        [self.seafoodTypes removeAllObjects];
+//        for (PFObject *object in fetchedObjects) {
+//            SKSeafoodType *seafoodType = [SKSeafoodType new];
+//            seafoodType.name = object[@"Name"];
+//            seafoodType.objectId = [object objectId];
+//            seafoodType.unitType = [object[@"Unit_Type"] integerValue];
+//            PFFile *imageFile = object[@"Category_Picture"];
+//            seafoodType.image = [UIImage imageWithData:[imageFile getData]];
+//            [self.seafoodTypes addObject:seafoodType];
+//        }
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            handler(self.seafoodTypes);
+//        });
+//    });
+//}
 
 -(void)initiateMap{
     
@@ -44,20 +82,30 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     
-    return 4;
+    return self.roomsArray.count;
 }
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath ];
+    RoomCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath ];
+    
+    Room *individual = self.roomsArray[indexPath.row];
+    cell.roomImageView.file = [individual objectForKey:@"roomImage"];
+    cell.roomPriceLabel.text = [individual objectForKey:@"price"];
+    cell.roomDescriptionLabel.text = [individual objectForKey:@"roomDetails"];
+    
+    if (!cell.roomImageView.image) {
+        cell.roomImageView.alpha = 0;
+        [cell.roomImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
+            cell.roomImageView.image = image;
+            [UIView animateWithDuration:0.3 animations:^{
+                cell.roomImageView.alpha = 1;
+            }];
+        }];
+    }
     
     return cell;
 }
@@ -72,21 +120,20 @@
         [self.mapView setHidden:NO];
         [self initiateMap];
     }
-    
-    
-
-    
-    
 }
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"showRoomDVC"]) {
+        DetailRoomViewController *dvc = [segue destinationViewController];
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        Room *individual = self.roomsArray[indexPath.row];
+        dvc.room = individual;
+        
+    }
 }
-*/
+
 
 @end
