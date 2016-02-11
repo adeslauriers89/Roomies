@@ -18,13 +18,16 @@
 @property (weak, nonatomic) IBOutlet UITextField *roomPrice;
 @property (weak, nonatomic) IBOutlet UITextField *dateAvailableTextField;
 
+@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
+
 @end
 
 @implementation AddRoomViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [(UIScrollView *)self.view setContentSize:CGSizeMake(320, 700)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +50,8 @@
     newRoom.roomDetails = self.roomDescription.text;
     newRoom.price = self.roomPrice.text;
     newRoom.roomUser = user;
+    newRoom.roomAddress = self.addressTextField.text;
+    newRoom.dateAvailable = self.dateAvailableTextField.text;
     
     
     

@@ -33,14 +33,14 @@
             [[[UIAlertView alloc] initWithTitle:@"Error" message:[error userInfo][@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
         }
         
-        //NSLog(@"%@",self.peopleArray);
+      
         
     }];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -57,7 +57,6 @@
     
     cell.personNameLabel.text = individual[@"fullName"];
     cell.personLookingForLabel.text = individual[@"userDetails"];
-    //cell.peopleImageView.file = [individual objectForKey: @"userImage"];
     PFFile *img = [individual objectForKey:@"userImage"];
     [img getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (data) {
@@ -65,17 +64,6 @@
             cell.peopleImageView.image = userImage;
         }
     }];
-    
-//    PFFile *thumbnail = [user objectForKey:@"userImage"];
-//    [thumbnail getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
-//        if (data) {
-//            UIImage *userImage = [UIImage imageWithData:data];
-//            self.profileImage.image = userImage;
-//        }
-//    }];
-    
-    
-    
     return cell;
 }
 

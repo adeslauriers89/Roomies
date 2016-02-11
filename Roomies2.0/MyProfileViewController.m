@@ -37,7 +37,6 @@
     
     self.profileDetailsTextView.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"userDetails"]];
     
-    
     PFFile *thumbnail = [user objectForKey:@"userImage"];
     [thumbnail getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
         if (data) {

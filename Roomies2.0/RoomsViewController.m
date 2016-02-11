@@ -12,6 +12,10 @@
 #import "RoomCustomTableViewCell.h"
 #import "Room.h"
 #import "DetailRoomViewController.h"
+#import <Corelocation/CLGeocoder.h>
+#import <Corelocation/CLPlacemark.h>
+#import <AddressBookUI/AddressBookUI.h>
+#import "RoomAnnotation.h"
 
 #define zoomingMapArea 4000
 
@@ -20,10 +24,8 @@
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *roomSegmentControl;
-@property (nonatomic, strong) CLLocation *vancouverLocation;
 @property (nonatomic, strong) NSMutableArray *roomsArray;
-
-
+@property (nonatomic) RoomAnnotation *annotationView;
 
 @end
 
@@ -37,39 +39,46 @@
         self.roomsArray = [objects mutableCopy];
         [self.tableView reloadData];
         
+        NSLog(@"%@",[[self.roomsArray lastObject]objectForKey:@"roomAddress"]);
+        
+        
+        for (Room *room in self.roomsArray) {
+            NSLog(@"%@", [room objectForKey:@"roomAddress"]);
+        
+        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+        [geocoder geocodeAddressString:[room objectForKey:@"roomAddress"] completionHandler:^(NSArray* placemarks, NSError* error){
+            for (CLPlacemark* aPlacemark in placemarks)
+            {
+
+                NSString *latDest1 = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.latitude];
+                NSString *lngDest1 = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.longitude];
+                NSLog(@"%@ %@ ", latDest1, lngDest1);
+                
+                room.title = [room objectForKey:@"roomTitle"];
+                room.subtitle = [room objectForKey:@"price"];
+                room.lat = @(aPlacemark.location.coordinate.latitude);
+                room.lng = @(aPlacemark.location.coordinate.longitude);
+                
+//                RoomAnnotation.lat = @(aPlacemark.location.coordinate.latitude);
+//                RoomAnnotation.lng = @(aPlacemark.location.coordinate.longitude);
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                     [self.mapView addAnnotation:room];
+                });
+              
+
+            }
+        }];
+        }
     }];
 }
-
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
   
     [self.mapView setHidden:YES];
-    
-    
 }
 
-
-//- (void)fetchSeafoodTypesWithCompletion:(void (^)(NSMutableArray *seafoodTypes))handler {
-//    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), ^{
-//        PFQuery *typeQuery = [PFQuery queryWithClassName:@"Seafood_Type"];
-//        NSArray *fetchedObjects = [typeQuery findObjects];
-//        [self.seafoodTypes removeAllObjects];
-//        for (PFObject *object in fetchedObjects) {
-//            SKSeafoodType *seafoodType = [SKSeafoodType new];
-//            seafoodType.name = object[@"Name"];
-//            seafoodType.objectId = [object objectId];
-//            seafoodType.unitType = [object[@"Unit_Type"] integerValue];
-//            PFFile *imageFile = object[@"Category_Picture"];
-//            seafoodType.image = [UIImage imageWithData:[imageFile getData]];
-//            [self.seafoodTypes addObject:seafoodType];
-//        }
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            handler(self.seafoodTypes);
-//        });
-//    });
-//}
 
 -(void)initiateMap{
     
@@ -78,13 +87,9 @@
     MKCoordinateRegion adjustedRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, zoomingMapArea, zoomingMapArea);
     
     [_mapView setRegion:adjustedRegion animated:YES];
-    
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    
-    
     return self.roomsArray.count;
 }
 
@@ -122,7 +127,6 @@
     }
 }
 
-
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -133,6 +137,31 @@
         dvc.room = individual;
         
     }
+}
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    
+    MKPinAnnotationView *view = (id)[mapView dequeueReusableAnnotationViewWithIdentifier:@"identifier"];
+    if (view) {
+        view.annotation = annotation;
+    } else {
+        view = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"identifier"];
+        UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        view.rightCalloutAccessoryView= infoButton;
+        infoButton.tag = 1200;
+        view.enabled = YES;
+        view.canShowCallout = YES;
+        view.multipleTouchEnabled = NO;
+        view.animatesDrop = YES;
+            }
+    return view;
+}
+
+
+
+-(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(RoomAnnotation *)view {
+    
+    [view setCanShowCallout:YES];
 }
 
 

@@ -160,11 +160,11 @@
                         <viewControllerLayoutGuide type="top" id="zOl-Pg-oD8"/>
                         <viewControllerLayoutGuide type="bottom" id="IWl-2h-jNr"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kXS-Zs-4g3">
+                    <view key="view" contentMode="scaleToFill" id="kXS-Zs-4g3" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Adam" translatesAutoresizingMaskIntoConstraints="NO" id="P5R-gm-sXE" customClass="PFImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P5R-gm-sXE" customClass="PFImageView">
                                 <rect key="frame" x="67" y="72" width="240" height="220"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="grG-tj-j4V"/>
@@ -390,12 +390,12 @@
                         <viewControllerLayoutGuide type="top" id="3re-Nm-dOX"/>
                         <viewControllerLayoutGuide type="bottom" id="ClU-8g-wb0"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tc7-iI-gDJ">
+                    <view key="view" contentMode="scaleToFill" id="tc7-iI-gDJ" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euY-HF-yyL">
-                                <rect key="frame" x="77" y="512" width="49" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euY-HF-yyL">
+                                <rect key="frame" x="77" y="593" width="49" height="30"/>
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="submitButtonPressed:" destination="HSz-BI-H5C" eventType="touchUpInside" id="ddb-BF-IfG"/>
@@ -408,7 +408,7 @@
                                     <constraint firstAttribute="width" constant="220" id="hZq-1J-tKL"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ufh-cV-Lah">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ufh-cV-Lah">
                                 <rect key="frame" x="77" y="297" width="220" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -422,39 +422,47 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lYM-o4-Z8t">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lYM-o4-Z8t">
                                 <rect key="frame" x="77" y="437" width="220" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date available DD/MM/YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xxf-ox-24y">
+                                <rect key="frame" x="77" y="475" width="220" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address, City, Province, Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z2J-Qx-rWl">
+                                <rect key="frame" x="77" y="513" width="220" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEO-h0-4Yl">
-                                <rect key="frame" x="249" y="513" width="48" height="30"/>
+                                <rect key="frame" x="249" y="593" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancelButtonPressed:" destination="HSz-BI-H5C" eventType="touchUpInside" id="U7Z-gT-F8O"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="date available DD/MM/YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xxf-ox-24y">
-                                <rect key="frame" x="77" y="475" width="220" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fDJ-kP-N12" firstAttribute="width" secondItem="Ufh-cV-Lah" secondAttribute="width" id="27P-Wi-xG2"/>
+                            <constraint firstItem="Z2J-Qx-rWl" firstAttribute="top" secondItem="xxf-ox-24y" secondAttribute="bottom" constant="8" id="4tK-nj-g3N"/>
+                            <constraint firstItem="Z2J-Qx-rWl" firstAttribute="width" secondItem="xxf-ox-24y" secondAttribute="width" id="EEe-5q-L2a"/>
                             <constraint firstItem="lYM-o4-Z8t" firstAttribute="top" secondItem="fDJ-kP-N12" secondAttribute="bottom" constant="15" id="FuZ-ly-sF7"/>
                             <constraint firstItem="fDJ-kP-N12" firstAttribute="top" secondItem="Ufh-cV-Lah" secondAttribute="bottom" constant="15" id="H4S-DY-wNJ"/>
                             <constraint firstItem="lYM-o4-Z8t" firstAttribute="width" secondItem="fDJ-kP-N12" secondAttribute="width" id="ICX-L4-mlO"/>
+                            <constraint firstItem="Z2J-Qx-rWl" firstAttribute="centerX" secondItem="tc7-iI-gDJ" secondAttribute="centerX" id="KZI-xg-iTP"/>
                             <constraint firstItem="euY-HF-yyL" firstAttribute="leading" secondItem="lYM-o4-Z8t" secondAttribute="leading" id="M0j-nv-9Y5"/>
                             <constraint firstItem="Ufh-cV-Lah" firstAttribute="centerX" secondItem="tc7-iI-gDJ" secondAttribute="centerX" id="Obr-Mn-2WR"/>
                             <constraint firstItem="Ufh-cV-Lah" firstAttribute="width" secondItem="Lpi-U7-Kwm" secondAttribute="width" id="SJU-rM-WgL"/>
                             <constraint firstItem="xxf-ox-24y" firstAttribute="width" secondItem="lYM-o4-Z8t" secondAttribute="width" id="Ty5-2z-ypU"/>
                             <constraint firstItem="fDJ-kP-N12" firstAttribute="centerX" secondItem="tc7-iI-gDJ" secondAttribute="centerX" id="ZrM-5L-bf4"/>
-                            <constraint firstItem="euY-HF-yyL" firstAttribute="top" secondItem="xxf-ox-24y" secondAttribute="bottom" constant="8" id="bOY-wW-LZ8"/>
+                            <constraint firstItem="euY-HF-yyL" firstAttribute="top" secondItem="xxf-ox-24y" secondAttribute="bottom" constant="88" id="bOY-wW-LZ8"/>
                             <constraint firstItem="Lpi-U7-Kwm" firstAttribute="top" secondItem="3re-Nm-dOX" secondAttribute="bottom" constant="10" id="ggL-sY-C0m"/>
                             <constraint firstItem="rEO-h0-4Yl" firstAttribute="trailing" secondItem="lYM-o4-Z8t" secondAttribute="trailing" id="jV7-Xu-3Sp"/>
-                            <constraint firstItem="rEO-h0-4Yl" firstAttribute="top" secondItem="xxf-ox-24y" secondAttribute="bottom" constant="8" id="kiN-11-OqK"/>
+                            <constraint firstItem="rEO-h0-4Yl" firstAttribute="top" secondItem="xxf-ox-24y" secondAttribute="bottom" constant="88" id="kiN-11-OqK"/>
                             <constraint firstItem="xxf-ox-24y" firstAttribute="centerX" secondItem="tc7-iI-gDJ" secondAttribute="centerX" id="qdC-D6-RM9"/>
                             <constraint firstItem="Ufh-cV-Lah" firstAttribute="top" secondItem="Lpi-U7-Kwm" secondAttribute="bottom" constant="15" id="rlF-ig-eZJ"/>
                             <constraint firstItem="Lpi-U7-Kwm" firstAttribute="centerX" secondItem="tc7-iI-gDJ" secondAttribute="centerX" id="tcI-qc-ekU"/>
@@ -470,9 +478,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="addressTextField" destination="Z2J-Qx-rWl" id="vmC-1a-JQ7"/>
                         <outlet property="dateAvailableTextField" destination="xxf-ox-24y" id="xAS-q6-E7F"/>
                         <outlet property="imageToUpload" destination="Lpi-U7-Kwm" id="WzO-ZR-lVh"/>
                         <outlet property="roomDescription" destination="fDJ-kP-N12" id="Dab-p8-SOB"/>
@@ -498,6 +506,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3eE-Hk-IfM">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Rha-U4-C3X" id="1O5-dY-7x8"/>
+                                </connections>
                             </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="344" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8rw-DR-FPJ">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
@@ -718,7 +729,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Adam" width="640" height="480"/>
         <image name="Happy-people" width="791" height="800"/>
         <image name="default_user" width="150" height="150"/>
         <image name="nice-room" width="620" height="539"/>

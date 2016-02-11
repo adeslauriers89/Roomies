@@ -29,6 +29,7 @@
 		A683FED41C6962410027C720 /* DetailPeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FED31C6962410027C720 /* DetailPeopleViewController.m */; };
 		A683FED71C69625C0027C720 /* DetailRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FED61C69625C0027C720 /* DetailRoomViewController.m */; };
 		A683FEDB1C69655E0027C720 /* RoomCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FEDA1C69655E0027C720 /* RoomCustomTableViewCell.m */; };
+		A6F976C41C6D37A000B0B768 /* RoomAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = A6F976C31C6D37A000B0B768 /* RoomAnnotation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		A683FED61C69625C0027C720 /* DetailRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailRoomViewController.m; sourceTree = "<group>"; };
 		A683FED91C69655E0027C720 /* RoomCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomCustomTableViewCell.h; sourceTree = "<group>"; };
 		A683FEDA1C69655E0027C720 /* RoomCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomCustomTableViewCell.m; sourceTree = "<group>"; };
+		A6F976C21C6D37A000B0B768 /* RoomAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomAnnotation.h; sourceTree = "<group>"; };
+		A6F976C31C6D37A000B0B768 /* RoomAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomAnnotation.m; sourceTree = "<group>"; };
 		FDA47A6244639B8483D48AB6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -211,6 +214,8 @@
 				A683FEC61C68EFF00027C720 /* Model */,
 				A638F4241C6AA2D3000F42D3 /* UI */,
 				A683FE8F1C68ED740027C720 /* Supporting Files */,
+				A6F976C21C6D37A000B0B768 /* RoomAnnotation.h */,
+				A6F976C31C6D37A000B0B768 /* RoomAnnotation.m */,
 			);
 			path = Roomies2.0;
 			sourceTree = "<group>";
@@ -460,6 +465,7 @@
 				A62E3E181C6A828C00D440B5 /* Room.m in Sources */,
 				A62E3E1B1C6A82BF00D440B5 /* RoomieUser.m in Sources */,
 				A674B41B1C69738A00B09F57 /* PeopleCustomTableViewCell.m in Sources */,
+				A6F976C41C6D37A000B0B768 /* RoomAnnotation.m in Sources */,
 				A62E3E121C6A734200D440B5 /* MyProfileViewController.m in Sources */,
 				A683FECF1C68F3800027C720 /* PeopleViewController.m in Sources */,
 				A683FED71C69625C0027C720 /* DetailRoomViewController.m in Sources */,

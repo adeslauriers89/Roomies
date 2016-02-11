@@ -15,10 +15,25 @@
 @dynamic roomImage;
 @dynamic roomTitle;
 @dynamic roomUser;
+@dynamic dateAvailable;
+@dynamic roomAddress;
+@dynamic lat;
+@dynamic lng;
+@dynamic coordinate;
+@dynamic title;
+@dynamic subtitle;
+
+
+- (CLLocationCoordinate2D)coordinate {
+    
+    CLLocationCoordinate2D temp = CLLocationCoordinate2DMake(self.lat.floatValue, self.lng.floatValue);
+    return temp;
+}
 
 +(void)load {
     [self registerSubclass];
 }
+
 
 
 + (NSString *)parseClassName {
