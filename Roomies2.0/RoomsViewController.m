@@ -91,6 +91,12 @@
     [self.mapView setHidden:YES];
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    
+}
+
 -(void)initiateMap{
     
     CLLocationCoordinate2D zoomLocation = CLLocationCoordinate2DMake(49.28, -123.12);
@@ -169,6 +175,10 @@
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     
+    if ([annotation isKindOfClass:[MKUserLocation class]]) {
+        return nil;
+    }
+    
     MKPinAnnotationView *view = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"identifier"];
     if (view) {
         view.annotation = annotation;
@@ -200,6 +210,14 @@
     [self performSegueWithIdentifier:@"showRoomDVCFromMap" sender:myRoom];
     self.annotationWasTapped = YES;
     self.annotation = view.annotation;
+}
+#pragma mark - Corelocation Delegate
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    
+    
+    if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        self.mapView.showsUserLocation = YES;
+    }
 }
 
 @end
