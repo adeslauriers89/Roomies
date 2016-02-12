@@ -29,6 +29,7 @@
 		A683FED41C6962410027C720 /* DetailPeopleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FED31C6962410027C720 /* DetailPeopleViewController.m */; };
 		A683FED71C69625C0027C720 /* DetailRoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FED61C69625C0027C720 /* DetailRoomViewController.m */; };
 		A683FEDB1C69655E0027C720 /* RoomCustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A683FEDA1C69655E0027C720 /* RoomCustomTableViewCell.m */; };
+		A68A395A1C6E2A5800124BEA /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68A39591C6E2A5800124BEA /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		A683FED61C69625C0027C720 /* DetailRoomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailRoomViewController.m; sourceTree = "<group>"; };
 		A683FED91C69655E0027C720 /* RoomCustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomCustomTableViewCell.h; sourceTree = "<group>"; };
 		A683FEDA1C69655E0027C720 /* RoomCustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomCustomTableViewCell.m; sourceTree = "<group>"; };
+		A68A39591C6E2A5800124BEA /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		FDA47A6244639B8483D48AB6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A68A395A1C6E2A5800124BEA /* MessageUI.framework in Frameworks */,
 				A674B41D1C69800A00B09F57 /* MapKit.framework in Frameworks */,
 				5C7BE215574CE88A56DCA2D3 /* Pods.framework in Frameworks */,
 			);
@@ -270,6 +273,7 @@
 		BD6DCCCC2152CC06833FF5D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A68A39591C6E2A5800124BEA /* MessageUI.framework */,
 				A674B41C1C69800A00B09F57 /* MapKit.framework */,
 				FDA47A6244639B8483D48AB6 /* Pods.framework */,
 			);

@@ -84,7 +84,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <LocationScenarioReference
-         identifier = "../../../../Downloads/vancouver.gpx"
+         identifier = "../van_city_hall.gpx"
          referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>

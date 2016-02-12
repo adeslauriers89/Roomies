@@ -30,6 +30,7 @@
 @property (nonatomic, strong) Room *room;
 @property (nonatomic, strong) NSString *dollarSign;
 @property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -82,22 +83,38 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.mapView setHidden:YES];
+    
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
         [self.locationManager requestWhenInUseAuthorization];
     };
     
-    [self.mapView setHidden:YES];
+    [self.tableView addSubview:self.refreshControl];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor purpleColor];
+    self.refreshControl.tintColor = [UIColor whiteColor];
+    [self.refreshControl addTarget:self
+                            action:@selector(updateRooms)
+                  forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl endRefreshing];
+    
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+}
+
+-(void)updateRooms {
+    [self.tableView reloadData];
     
 }
 
--(void)initiateMap{
+-(void)initiateMap {
     
     CLLocationCoordinate2D zoomLocation = CLLocationCoordinate2DMake(49.28, -123.12);
     
@@ -112,15 +129,17 @@
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSArray *sorted 
-//    NSSortDescriptor *dateSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
-//    self.roomsArray = [self.roomsArray sortedArrayUsingSelector:@[dateSortDescriptor]];
-//    
+    
+   // NSLog(@"%@",self.roomsArray);
+//    NSArray *reversedArray = [[self.roomsArray reverseObjectEnumerator] allObjects];
+   // NSLog(@"%@", reversedArray);
+    
     
     RoomCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath ];
     cell.roomDescriptionLabel.text = @"";
     cell.roomImageView.image = nil;
     cell.roomPriceLabel.text = @"";
+    
     
     Room *individual = self.roomsArray[indexPath.row];
     NSLog(@"\nroom: %@  \nimage:  %@", individual.roomTitle, individual.roomImage);
@@ -166,6 +185,9 @@
             dvc.room = myRoom;
     
     } else if ([segue.identifier isEqualToString:@"showRoomDVC"]){
+        
+//            NSArray *reversedArray = [[self.roomsArray reverseObjectEnumerator] allObjects];
+        
             DetailRoomViewController *dvc = [segue destinationViewController];
             NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
             Room *individual = self.roomsArray[indexPath.row];
