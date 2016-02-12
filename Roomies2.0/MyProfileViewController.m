@@ -30,6 +30,8 @@
     
     
     
+    
+    
     PFUser *user = [PFUser currentUser];
     
     
@@ -47,7 +49,7 @@
     
 
     self.profileDetailsTextView.layer.borderWidth = 1.0;
-    self.profileDetailsTextView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.profileDetailsTextView.layer.borderColor = [UIColor colorWithRed:217.0f/255.0f green:217.0f/255.0f blue:217.0f/255.0f alpha:1.0].CGColor;
     self.profileDetailsTextView.layer.cornerRadius = 5.0;
 
  

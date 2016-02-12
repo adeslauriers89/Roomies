@@ -15,7 +15,7 @@
 #import <Corelocation/CLGeocoder.h>
 #import <Corelocation/CLPlacemark.h>
 #import <AddressBookUI/AddressBookUI.h>
-#import "RoomAnnotation.h"
+
 
 #define zoomingMapArea 4000
 
@@ -25,7 +25,10 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *roomSegmentControl;
 @property (nonatomic, strong) NSMutableArray *roomsArray;
-@property (nonatomic) RoomAnnotation *annotationView;
+@property (nonatomic) BOOL annotationWasTapped;
+@property (nonatomic, strong) id<MKAnnotation> annotation;
+@property (nonatomic, strong) Room *room;
+@property (nonatomic, strong) NSString *dollarSign;
 
 @end
 
@@ -33,52 +36,54 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    self.dollarSign = @"$";
+        
     PFQuery *query = [PFQuery queryWithClassName:@"Room"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
         self.roomsArray = [objects mutableCopy];
         [self.tableView reloadData];
+     //   NSSet *roomsSet = [NSSet setWithArray:self.mapView.annotations];
         
-        NSLog(@"%@",[[self.roomsArray lastObject]objectForKey:@"roomAddress"]);
+        NSMutableSet *roomObjectIDSet =[NSMutableSet set];
+        for (Room *room in self.mapView.annotations){
+            [roomObjectIDSet addObject:room.objectId ];
+            //NSLog(@"%@",roomObjectIDSet);
+        }
         
         
         for (Room *room in self.roomsArray) {
-            NSLog(@"%@", [room objectForKey:@"roomAddress"]);
-        
-        CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-        [geocoder geocodeAddressString:[room objectForKey:@"roomAddress"] completionHandler:^(NSArray* placemarks, NSError* error){
-            for (CLPlacemark* aPlacemark in placemarks)
-            {
+            
+            
+            CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+            [geocoder geocodeAddressString:[room objectForKey:@"roomAddress"] completionHandler:^(NSArray* placemarks, NSError* error){
+                for (CLPlacemark* aPlacemark in placemarks)
+                {
+                    
+                    room.title = room.roomTitle;
+                    room.subtitle = [self.dollarSign stringByAppendingString:[room objectForKey:@"price"]];
+                    room.lat = @(aPlacemark.location.coordinate.latitude);
+                    room.lng = @(aPlacemark.location.coordinate.longitude);
+                    
+                    if (![roomObjectIDSet containsObject:room.objectId]) {
 
-                NSString *latDest1 = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.latitude];
-                NSString *lngDest1 = [NSString stringWithFormat:@"%.4f",aPlacemark.location.coordinate.longitude];
-                NSLog(@"%@ %@ ", latDest1, lngDest1);
-                
-                room.title = [room objectForKey:@"roomTitle"];
-                room.subtitle = [room objectForKey:@"price"];
-                room.lat = @(aPlacemark.location.coordinate.latitude);
-                room.lng = @(aPlacemark.location.coordinate.longitude);
-                
-//                RoomAnnotation.lat = @(aPlacemark.location.coordinate.latitude);
-//                RoomAnnotation.lng = @(aPlacemark.location.coordinate.longitude);
-                
-                dispatch_async(dispatch_get_main_queue(), ^{
-                     [self.mapView addAnnotation:room];
-                });
-              
-
-            }
-        }];
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            [self.mapView addAnnotation:room];
+                        });
+                    }
+                }
+            }];
         }
     }];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
   
+    
     [self.mapView setHidden:YES];
 }
-
 
 -(void)initiateMap{
     
@@ -96,12 +101,17 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     RoomCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath ];
+    cell.roomDescriptionLabel.text = @"";
+    cell.roomImageView.image = nil;
+    cell.roomPriceLabel.text = @"";
     
     Room *individual = self.roomsArray[indexPath.row];
+    NSLog(@"\nroom: %@  \nimage:  %@", individual.roomTitle, individual.roomImage);
     cell.roomImageView.file = [individual objectForKey:@"roomImage"];
-    cell.roomPriceLabel.text = [individual objectForKey:@"price"];
-    cell.roomDescriptionLabel.text = [individual objectForKey:@"roomDetails"];
+    [cell.roomImageView addSubview:cell.roomPriceLabel];
     
+    cell.roomPriceLabel.text = [self.dollarSign stringByAppendingString:individual.price];
+    cell.roomDescriptionLabel.text = [individual objectForKey:@"roomTitle"];
     if (!cell.roomImageView.image) {
         cell.roomImageView.alpha = 0;
         [cell.roomImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
@@ -130,18 +140,25 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"showRoomDVC"]) {
+    if ([segue.identifier isEqualToString:@"showRoomDVCFromMap"]) {
+
         DetailRoomViewController *dvc = [segue destinationViewController];
-        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-        Room *individual = self.roomsArray[indexPath.row];
-        dvc.room = individual;
         
+      
+            Room *myRoom = (Room*)sender;
+            dvc.room = myRoom;
+    
+    } else if ([segue.identifier isEqualToString:@"showRoomDVC"]){
+            DetailRoomViewController *dvc = [segue destinationViewController];
+            NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+            Room *individual = self.roomsArray[indexPath.row];
+            dvc.room = individual;
     }
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     
-    MKPinAnnotationView *view = (id)[mapView dequeueReusableAnnotationViewWithIdentifier:@"identifier"];
+    MKPinAnnotationView *view = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"identifier"];
     if (view) {
         view.annotation = annotation;
     } else {
@@ -153,16 +170,25 @@
         view.canShowCallout = YES;
         view.multipleTouchEnabled = NO;
         view.animatesDrop = YES;
+        
             }
     return view;
 }
 
-
-
--(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(RoomAnnotation *)view {
+-(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view {
     
     [view setCanShowCallout:YES];
 }
 
+
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+    
+    Room *myRoom = (Room*)view.annotation;
+    
+    [self performSegueWithIdentifier:@"showRoomDVCFromMap" sender:myRoom];
+    self.annotationWasTapped = YES;
+    self.annotation = view.annotation;
+}
 
 @end

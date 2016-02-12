@@ -27,6 +27,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    self.roomDescription.layer.borderWidth = 1.0;
+    self.roomDescription.layer.borderColor = [UIColor colorWithRed:217.0f/255.0f green:217.0f/255.0f blue:217.0f/255.0f alpha:1.0].CGColor;
+    
+    self.roomDescription.layer.cornerRadius = 5.0;
+    
     [(UIScrollView *)self.view setContentSize:CGSizeMake(320, 700)];
 }
 
@@ -36,9 +42,7 @@
 }
 
 - (IBAction)cancelButtonPressed:(UIButton *)sender {
-    
     [self.navigationController popToRootViewControllerAnimated:YES];
-    
 }
 
 - (IBAction)submitButtonPressed:(UIButton *)sender {
@@ -53,8 +57,6 @@
     newRoom.roomAddress = self.addressTextField.text;
     newRoom.dateAvailable = self.dateAvailableTextField.text;
     
-    
-    
     double compressionRatio = 1;
     NSData *pictureData = UIImagePNGRepresentation(self.imageToUpload.image);
     while ([pictureData length]>500000) {
@@ -64,10 +66,6 @@
 
     PFFile *imageFile = [PFFile fileWithName:@"image.png" data:pictureData];
     newRoom[@"roomImage"] = imageFile;
-    
-        
-    
-    
     [newRoom saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         
         if (succeeded) {
@@ -77,13 +75,9 @@
         else {
             NSString *errorString = [[error userInfo] objectForKey:@"error"];
             NSLog(@"Error: %@", errorString);
-            
-           
         }
     }];
-    
 }
-
 
 - (IBAction)addImageButtonPressed:(UIBarButtonItem *)sender {
     
@@ -98,6 +92,11 @@
     
     [picker dismissViewControllerAnimated:YES completion:nil];
     self.imageToUpload.image = info[UIImagePickerControllerOriginalImage];
+}
+
+-(void)textViewDidBeginEditing:(UITextView*)textView{
+    
+    self.roomDescription.text = @"";
 }
 
 @end

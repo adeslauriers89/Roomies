@@ -313,7 +313,6 @@
                                     <constraint firstAttribute="width" constant="150" id="Bxa-M9-e7E"/>
                                     <constraint firstAttribute="width" secondItem="7X4-qf-U1k" secondAttribute="height" multiplier="1:1" id="NMR-pE-DeB"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="changeImageButtonPressed:" destination="Xh9-p3-R5C" eventType="touchUpInside" id="AnL-wD-EoU"/>
                                 </connections>
@@ -382,7 +381,7 @@
             </objects>
             <point key="canvasLocation" x="3254.5" y="1134.5"/>
         </scene>
-        <!--Title-->
+        <!--Add Listing-->
         <scene sceneID="Y0c-FN-AMf">
             <objects>
                 <viewController id="HSz-BI-H5C" customClass="AddRoomViewController" sceneMemberID="viewController">
@@ -401,7 +400,7 @@
                                     <action selector="submitButtonPressed:" destination="HSz-BI-H5C" eventType="touchUpInside" id="ddb-BF-IfG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nice-room" translatesAutoresizingMaskIntoConstraints="NO" id="Lpi-U7-Kwm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="Lpi-U7-Kwm">
                                 <rect key="frame" x="77" y="74" width="220" height="208.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lpi-U7-Kwm" secondAttribute="height" multiplier="240:227" id="Cow-nq-e3Z"/>
@@ -413,7 +412,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="room description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fDJ-kP-N12">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Room description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fDJ-kP-N12">
                                 <rect key="frame" x="77" y="342" width="220" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -421,6 +420,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="HSz-BI-H5C" id="Qdv-ux-Xi8"/>
+                                </connections>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lYM-o4-Z8t">
                                 <rect key="frame" x="77" y="437" width="220" height="30"/>
@@ -471,7 +473,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="eQr-ad-9bM">
+                    <navigationItem key="navigationItem" title="Add Listing" id="eQr-ad-9bM">
                         <barButtonItem key="rightBarButtonItem" title="Add image" id="RKR-RO-Zd3">
                             <connections>
                                 <action selector="addImageButtonPressed:" destination="HSz-BI-H5C" id="Jiu-3a-kjq"/>
@@ -504,7 +506,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3eE-Hk-IfM">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3eE-Hk-IfM">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
                                     <outlet property="delegate" destination="Rha-U4-C3X" id="1O5-dY-7x8"/>
@@ -605,6 +607,7 @@
                         <outlet property="mapView" destination="3eE-Hk-IfM" id="vWS-OF-KNH"/>
                         <outlet property="roomSegmentControl" destination="KWi-jK-Cj1" id="o7G-6G-rl8"/>
                         <outlet property="tableView" destination="8rw-DR-FPJ" id="mTp-al-fA7"/>
+                        <segue destination="PzA-GF-FXn" kind="show" identifier="showRoomDVCFromMap" id="xqS-dN-Sob"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Gv-eY-Km5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -731,10 +734,12 @@
     <resources>
         <image name="Happy-people" width="791" height="800"/>
         <image name="default_user" width="150" height="150"/>
+        <image name="house" width="1080" height="1080"/>
         <image name="nice-room" width="620" height="539"/>
         <image name="view-room" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="xqS-dN-Sob"/>
         <segue reference="cIJ-F5-ABg"/>
     </inferredMetricsTieBreakers>
 </document>
