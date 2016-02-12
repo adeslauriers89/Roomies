@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Roomies-->
@@ -164,12 +165,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P5R-gm-sXE" customClass="PFImageView">
-                                <rect key="frame" x="67" y="72" width="240" height="220"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="220" id="grG-tj-j4V"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6d-ZB-nRi">
                                 <rect key="frame" x="165" y="302" width="45" height="21"/>
                                 <constraints>
@@ -187,7 +182,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glh-wv-cEi">
-                                <rect key="frame" x="67" y="343" width="240" height="120"/>
+                                <rect key="frame" x="77" y="343" width="220" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="Vvd-Fq-24d"/>
                                 </constraints>
@@ -195,19 +190,25 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P5R-gm-sXE" customClass="PFImageView">
+                                <rect key="frame" x="77" y="74" width="220" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="220" id="hIc-GL-7lb"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="P5R-gm-sXE" firstAttribute="trailing" secondItem="Glh-wv-cEi" secondAttribute="trailing" id="6Ug-ZT-sCK"/>
+                            <constraint firstItem="d6d-ZB-nRi" firstAttribute="top" secondItem="P5R-gm-sXE" secondAttribute="bottom" constant="8" symbolic="YES" id="AX1-WC-nmR"/>
                             <constraint firstItem="Glh-wv-cEi" firstAttribute="top" secondItem="d6d-ZB-nRi" secondAttribute="bottom" constant="20" id="BkN-0v-9kE"/>
-                            <constraint firstItem="d6d-ZB-nRi" firstAttribute="top" secondItem="P5R-gm-sXE" secondAttribute="bottom" constant="10" id="GrD-7R-9bJ"/>
-                            <constraint firstAttribute="trailing" secondItem="P5R-gm-sXE" secondAttribute="trailing" constant="68" id="K3g-sF-usZ"/>
+                            <constraint firstItem="P5R-gm-sXE" firstAttribute="leading" secondItem="Glh-wv-cEi" secondAttribute="leading" id="FkI-y9-wAf"/>
+                            <constraint firstItem="P5R-gm-sXE" firstAttribute="top" secondItem="zOl-Pg-oD8" secondAttribute="bottom" constant="10" id="Llt-3B-Mst"/>
                             <constraint firstItem="d6d-ZB-nRi" firstAttribute="centerX" secondItem="kXS-Zs-4g3" secondAttribute="centerX" id="P6z-TB-a8u"/>
                             <constraint firstItem="Glh-wv-cEi" firstAttribute="centerX" secondItem="kXS-Zs-4g3" secondAttribute="centerX" id="Pcq-TC-qKT"/>
+                            <constraint firstItem="P5R-gm-sXE" firstAttribute="leading" secondItem="kXS-Zs-4g3" secondAttribute="leadingMargin" constant="61" id="Ych-0A-F9h"/>
                             <constraint firstItem="US4-At-l0D" firstAttribute="centerX" secondItem="kXS-Zs-4g3" secondAttribute="centerX" id="bLS-nw-n16"/>
-                            <constraint firstItem="Glh-wv-cEi" firstAttribute="width" secondItem="P5R-gm-sXE" secondAttribute="width" id="pf3-GM-qd7"/>
                             <constraint firstItem="US4-At-l0D" firstAttribute="top" secondItem="Glh-wv-cEi" secondAttribute="bottom" constant="20" id="pgh-0M-niG"/>
-                            <constraint firstItem="P5R-gm-sXE" firstAttribute="leading" secondItem="kXS-Zs-4g3" secondAttribute="leading" constant="67" id="prN-Ps-Zmg"/>
-                            <constraint firstItem="P5R-gm-sXE" firstAttribute="top" secondItem="zOl-Pg-oD8" secondAttribute="bottom" constant="8" id="tnh-YK-xtS"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -258,7 +259,7 @@
                                     <constraint firstAttribute="width" constant="180" id="eMd-UV-Ccj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tell us about yourself and what you're looking for.." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WSJ-TV-60c">
@@ -400,7 +401,7 @@
                                     <action selector="submitButtonPressed:" destination="HSz-BI-H5C" eventType="touchUpInside" id="ddb-BF-IfG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house" translatesAutoresizingMaskIntoConstraints="NO" id="Lpi-U7-Kwm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addpic" translatesAutoresizingMaskIntoConstraints="NO" id="Lpi-U7-Kwm">
                                 <rect key="frame" x="77" y="74" width="220" height="208.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Lpi-U7-Kwm" secondAttribute="height" multiplier="240:227" id="Cow-nq-e3Z"/>
@@ -666,7 +667,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Available on:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUr-rI-Vzj">
                                 <rect key="frame" x="73" y="460" width="96" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03/02/12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAm-c6-RHS">
@@ -733,8 +734,8 @@
     </scenes>
     <resources>
         <image name="Happy-people" width="791" height="800"/>
+        <image name="addpic" width="64" height="64"/>
         <image name="default_user" width="150" height="150"/>
-        <image name="house" width="1080" height="1080"/>
         <image name="nice-room" width="620" height="539"/>
         <image name="view-room" width="600" height="600"/>
     </resources>

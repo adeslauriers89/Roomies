@@ -29,6 +29,7 @@
 @property (nonatomic, strong) id<MKAnnotation> annotation;
 @property (nonatomic, strong) Room *room;
 @property (nonatomic, strong) NSString *dollarSign;
+@property (nonatomic, retain) CLLocationManager *locationManager;
 
 @end
 
@@ -80,7 +81,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [self.locationManager requestWhenInUseAuthorization];
+    };
     
     [self.mapView setHidden:YES];
 }
@@ -100,6 +106,11 @@
 
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    NSArray *sorted 
+//    NSSortDescriptor *dateSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES];
+//    self.roomsArray = [self.roomsArray sortedArrayUsingSelector:@[dateSortDescriptor]];
+//    
+    
     RoomCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath ];
     cell.roomDescriptionLabel.text = @"";
     cell.roomImageView.image = nil;

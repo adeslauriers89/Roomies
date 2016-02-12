@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@import MapKit;
 
-@interface RoomsViewController : UIViewController
+@interface RoomsViewController : UIViewController <CLLocationManagerDelegate>
 
 @end
