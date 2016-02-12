@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "Room.h"
 
-@interface AddRoomViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface AddRoomViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageToUpload;
 @property (weak, nonatomic) IBOutlet UITextField *roomTitle;
@@ -24,6 +24,33 @@
 
 @implementation AddRoomViewController
 
+#pragma mark - UITextViewDelegate -
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if([text isEqualToString:@"\n"]) {
+        [self.roomPrice becomeFirstResponder];
+        return NO;
+    }
+    return YES;
+}
+
+#pragma mark - UITextFieldDelegate -
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([textField isEqual:self.addressTextField]) {
+        [textField resignFirstResponder];
+    } else if ([textField isEqual:self.roomTitle]) {
+        [self.roomDescription becomeFirstResponder];
+    } else if ([textField isEqual:self.roomPrice]) {
+        [self.dateAvailableTextField becomeFirstResponder];
+    } else if ([textField isEqual:self.dateAvailableTextField]) {
+        [self.addressTextField becomeFirstResponder];
+    }
+    return NO;
+}
+
+#pragma mark - View Controller Life Cycle -
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -34,11 +61,9 @@
     self.roomDescription.layer.cornerRadius = 5.0;
     
     [(UIScrollView *)self.view setContentSize:CGSizeMake(320, 700)];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    //[[[UIApplication sharedApplication] keyWindow] endEditing:YES];
+    
 }
 
 - (IBAction)cancelButtonPressed:(UIButton *)sender {
@@ -98,5 +123,11 @@
     
     self.roomDescription.text = @"";
 }
+
+//- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent *)event {
+//
+//    [[self view] endEditing:YES];
+//    self.view.resignFirstResponder = YES;
+//}
 
 @end

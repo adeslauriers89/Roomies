@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 
 
-@interface MyProfileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface MyProfileViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UITextField *profileNameTextField;
@@ -27,10 +27,7 @@
     [super viewDidLoad];
     
     self.canEditProfile = NO;
-    
-    
-    
-    
+
     
     PFUser *user = [PFUser currentUser];
     

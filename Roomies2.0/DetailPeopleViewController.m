@@ -10,8 +10,10 @@
 #import "UIViewController+Login.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import <MessageUI/MessageUI.h>
 
-@interface DetailPeopleViewController () <PFLogInViewControllerDelegate>
+
+@interface DetailPeopleViewController () <PFLogInViewControllerDelegate, MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet PFImageView *personDetailImage;
 
@@ -50,11 +52,56 @@
     
     if ([PFUser currentUser ]) {
         
-        [self performSegueWithIdentifier:@"showMessageVCFromPpl" sender:self];
+        if ([MFMailComposeViewController canSendMail]) {
+            MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+            mc.mailComposeDelegate = self;
+            [self presentViewController:mc animated:YES completion:NULL];
+            NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
+            [mc setToRecipients:toRecipents];
+        }
     } else {
         [self showLoginController];
     }
+}
+
+- (IBAction)roomMessageButtonPressed:(UIButton *)sender {
     
+    if ([PFUser currentUser ]) {
+        
+        if ([MFMailComposeViewController canSendMail]) {
+            MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+            mc.mailComposeDelegate = self;
+            [self presentViewController:mc animated:YES completion:NULL];
+            NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
+            [mc setToRecipients:toRecipents];
+        }
+    } else {
+        [self showLoginController];
+    }
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
     
 }
 

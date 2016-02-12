@@ -10,8 +10,9 @@
 #import "UIViewController+Login.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import <MessageUI/MessageUI.h>
 
-@interface DetailRoomViewController () <PFLogInViewControllerDelegate>
+@interface DetailRoomViewController () <PFLogInViewControllerDelegate, MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet PFImageView *roomImageView;
 @property (weak, nonatomic) IBOutlet UILabel *roomPrice;
 @property (weak, nonatomic) IBOutlet UITextView *roomDetailTextView;
@@ -33,7 +34,7 @@
     self.roomDetailTextView.text = self.room.roomDetails;
     self.roomImageView.file = [self.room objectForKey:@"roomImage"];
     
-    NSLog(@"%@", self.room.roomImage);
+   // NSLog(@"%@", self.room.roomImage);
     
     
   
@@ -52,10 +53,41 @@
     
     if ([PFUser currentUser ]) {
         
-        [self performSegueWithIdentifier:@"showMessageVCFromRoom" sender:self];
+        if ([MFMailComposeViewController canSendMail]) {
+            MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+            mc.mailComposeDelegate = self;
+            [self presentViewController:mc animated:YES completion:NULL];
+            NSArray *toRecipents = [NSArray arrayWithObject:@"adeslauriers89@gmail.com"];
+            [mc setToRecipients:toRecipents];
+        }
     } else {
         [self showLoginController];
     }
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    
 }
 
 @end

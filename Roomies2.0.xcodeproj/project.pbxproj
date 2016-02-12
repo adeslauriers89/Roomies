@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5C7BE215574CE88A56DCA2D3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA47A6244639B8483D48AB6 /* Pods.framework */; };
 		A62E3E121C6A734200D440B5 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62E3E111C6A734200D440B5 /* MyProfileViewController.m */; };
-		A62E3E151C6A73C400D440B5 /* SendMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62E3E141C6A73C400D440B5 /* SendMessageViewController.m */; };
 		A62E3E181C6A828C00D440B5 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = A62E3E171C6A828C00D440B5 /* Room.m */; };
 		A62E3E1B1C6A82BF00D440B5 /* RoomieUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A62E3E1A1C6A82BF00D440B5 /* RoomieUser.m */; };
 		A638F4201C6AA004000F42D3 /* UIViewController+Login.m in Sources */ = {isa = PBXBuildFile; fileRef = A638F41F1C6AA004000F42D3 /* UIViewController+Login.m */; };
@@ -54,8 +53,6 @@
 		8857A49DB50FC13692C91EAF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A62E3E101C6A734200D440B5 /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
 		A62E3E111C6A734200D440B5 /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
-		A62E3E131C6A73C400D440B5 /* SendMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMessageViewController.h; sourceTree = "<group>"; };
-		A62E3E141C6A73C400D440B5 /* SendMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMessageViewController.m; sourceTree = "<group>"; };
 		A62E3E161C6A828C00D440B5 /* Room.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Room.h; sourceTree = "<group>"; };
 		A62E3E171C6A828C00D440B5 /* Room.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Room.m; sourceTree = "<group>"; };
 		A62E3E191C6A82BF00D440B5 /* RoomieUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomieUser.h; sourceTree = "<group>"; };
@@ -137,8 +134,6 @@
 		A638F4211C6AA215000F42D3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				A62E3E131C6A73C400D440B5 /* SendMessageViewController.h */,
-				A62E3E141C6A73C400D440B5 /* SendMessageViewController.m */,
 				A638F41E1C6AA004000F42D3 /* UIViewController+Login.h */,
 				A638F41F1C6AA004000F42D3 /* UIViewController+Login.m */,
 				A683FEC71C68F0E00027C720 /* MainMenuViewController.h */,
@@ -350,6 +345,7 @@
 				TargetAttributes = {
 					A683FE8B1C68ED740027C720 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 4U2N6J8VHM;
 					};
 					A683FEA41C68ED740027C720 = {
 						CreatedOnToolsVersion = 7.2;
@@ -469,7 +465,6 @@
 				A683FED71C69625C0027C720 /* DetailRoomViewController.m in Sources */,
 				A683FE941C68ED740027C720 /* AppDelegate.m in Sources */,
 				A638F4201C6AA004000F42D3 /* UIViewController+Login.m in Sources */,
-				A62E3E151C6A73C400D440B5 /* SendMessageViewController.m in Sources */,
 				A683FE911C68ED740027C720 /* main.m in Sources */,
 				A67D770F1C6997D0008F4A11 /* AddRoomViewController.m in Sources */,
 				A683FEC91C68F0E00027C720 /* MainMenuViewController.m in Sources */,
@@ -615,10 +610,13 @@
 			baseConfigurationReference = 302EE848CEEE5F35D983A09F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Roomies2.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xcode.Roomies2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -627,10 +625,13 @@
 			baseConfigurationReference = 8857A49DB50FC13692C91EAF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Roomies2.0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "xcode.Roomies2-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

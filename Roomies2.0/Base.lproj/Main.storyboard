@@ -93,22 +93,36 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="125.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n7b-fB-gQK" customClass="PFImageView">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n7b-fB-gQK" customClass="PFImageView">
                                                     <rect key="frame" x="8" y="18" width="90" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="aMX-sB-jYZ"/>
+                                                        <constraint firstAttribute="height" constant="90" id="hOS-pg-pLl"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Looking For" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWv-ke-wP0">
-                                                    <rect key="frame" x="117" y="75" width="250" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Looking For" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWv-ke-wP0">
+                                                    <rect key="frame" x="117" y="75.5" width="90" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I83-Dy-tp9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I83-Dy-tp9">
                                                     <rect key="frame" x="117" y="31" width="250" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="I83-Dy-tp9" firstAttribute="trailing" secondItem="jnI-Zi-tS5" secondAttribute="trailingMargin" id="2aZ-Tt-O0J"/>
+                                                <constraint firstItem="n7b-fB-gQK" firstAttribute="leading" secondItem="jnI-Zi-tS5" secondAttribute="leadingMargin" id="I3W-PN-fHX"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KWv-ke-wP0" secondAttribute="trailing" constant="8" id="I7a-5D-geS"/>
+                                                <constraint firstItem="I83-Dy-tp9" firstAttribute="top" secondItem="jnI-Zi-tS5" secondAttribute="topMargin" constant="23" id="M6d-Vj-Nej"/>
+                                                <constraint firstItem="I83-Dy-tp9" firstAttribute="leading" secondItem="n7b-fB-gQK" secondAttribute="trailing" constant="19" id="Wpp-lK-pmg"/>
+                                                <constraint firstItem="KWv-ke-wP0" firstAttribute="leading" secondItem="jnI-Zi-tS5" secondAttribute="leadingMargin" constant="109" id="foz-sM-1DQ"/>
+                                                <constraint firstItem="n7b-fB-gQK" firstAttribute="top" secondItem="jnI-Zi-tS5" secondAttribute="topMargin" constant="10" id="jYA-HN-dmd"/>
+                                                <constraint firstAttribute="bottom" secondItem="KWv-ke-wP0" secondAttribute="bottom" constant="29.5" id="vkI-dL-iAB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
@@ -303,7 +317,7 @@
                                     <constraint firstAttribute="width" constant="200" id="tBx-PI-nBQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Xh9-p3-R5C" id="THh-tc-ZSO"/>
                                 </connections>
@@ -383,7 +397,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
@@ -420,7 +434,10 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ufh-cV-Lah">
                                 <rect key="frame" x="77" y="297" width="220" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="HSz-BI-H5C" id="dGj-w6-EKU"/>
+                                </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Room description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fDJ-kP-N12">
                                 <rect key="frame" x="77" y="342" width="220" height="80"/>
@@ -429,25 +446,34 @@
                                     <constraint firstAttribute="height" constant="80" id="gNI-Lm-R3x"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                 <connections>
-                                    <outlet property="delegate" destination="HSz-BI-H5C" id="Qdv-ux-Xi8"/>
+                                    <outlet property="delegate" destination="HSz-BI-H5C" id="nva-ao-JNO"/>
                                 </connections>
                             </textView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lYM-o4-Z8t">
                                 <rect key="frame" x="77" y="437" width="220" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="HSz-BI-H5C" id="Hfp-no-M4K"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date available DD/MM/YY" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xxf-ox-24y">
                                 <rect key="frame" x="77" y="475" width="220" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="HSz-BI-H5C" id="08T-fi-0jZ"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address, City, Province, Country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z2J-Qx-rWl">
                                 <rect key="frame" x="77" y="513" width="220" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="HSz-BI-H5C" id="a9r-q2-Bwc"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rEO-h0-4Yl">
                                 <rect key="frame" x="249" y="593" width="48" height="30"/>
@@ -752,4 +778,5 @@
         <segue reference="xqS-dN-Sob"/>
         <segue reference="cIJ-F5-ABg"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.28235295414924622" green="0.63137257099151611" blue="0.90588241815567017" alpha="1" colorSpace="deviceRGB"/>
 </document>

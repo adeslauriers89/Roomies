@@ -17,7 +17,7 @@
 #import <AddressBookUI/AddressBookUI.h>
 
 
-#define zoomingMapArea 4000
+#define zoomingMapArea 5800
 
 
 @interface RoomsViewController () <UITableViewDataSource, MKMapViewDelegate>
@@ -39,18 +39,23 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     self.dollarSign = @"$";
-        
+    
     PFQuery *query = [PFQuery queryWithClassName:@"Room"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
         self.roomsArray = [objects mutableCopy];
         [self.tableView reloadData];
-     //   NSSet *roomsSet = [NSSet setWithArray:self.mapView.annotations];
+        //   NSSet *roomsSet = [NSSet setWithArray:self.mapView.annotations];
         
         NSMutableSet *roomObjectIDSet =[NSMutableSet set];
-        for (Room *room in self.mapView.annotations){
-            [roomObjectIDSet addObject:room.objectId ];
-            //NSLog(@"%@",roomObjectIDSet);
+        
+        if ([self.mapView.annotations isKindOfClass:[MKUserLocation class]]) {
+            for (Room *room in self.mapView.annotations){
+                [roomObjectIDSet addObject:room.objectId ];
+                //NSLog(@"%@",roomObjectIDSet);
+        }
+       
+
         }
         
         
@@ -68,7 +73,7 @@
                     room.lng = @(aPlacemark.location.coordinate.longitude);
                     
                     if (![roomObjectIDSet containsObject:room.objectId]) {
-
+                        
                         dispatch_async(dispatch_get_main_queue(), ^{
                             [self.mapView addAnnotation:room];
                         });
@@ -130,9 +135,9 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-   // NSLog(@"%@",self.roomsArray);
-//    NSArray *reversedArray = [[self.roomsArray reverseObjectEnumerator] allObjects];
-   // NSLog(@"%@", reversedArray);
+    // NSLog(@"%@",self.roomsArray);
+    //    NSArray *reversedArray = [[self.roomsArray reverseObjectEnumerator] allObjects];
+    // NSLog(@"%@", reversedArray);
     
     
     RoomCustomTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath ];
@@ -142,7 +147,7 @@
     
     
     Room *individual = self.roomsArray[indexPath.row];
-    NSLog(@"\nroom: %@  \nimage:  %@", individual.roomTitle, individual.roomImage);
+    //NSLog(@"\nroom: %@  \nimage:  %@", individual.roomTitle, individual.roomImage);
     cell.roomImageView.file = [individual objectForKey:@"roomImage"];
     [cell.roomImageView addSubview:cell.roomPriceLabel];
     
@@ -177,21 +182,21 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showRoomDVCFromMap"]) {
-
+        
         DetailRoomViewController *dvc = [segue destinationViewController];
         
-      
-            Room *myRoom = (Room*)sender;
-            dvc.room = myRoom;
-    
+        
+        Room *myRoom = (Room*)sender;
+        dvc.room = myRoom;
+        
     } else if ([segue.identifier isEqualToString:@"showRoomDVC"]){
         
-//            NSArray *reversedArray = [[self.roomsArray reverseObjectEnumerator] allObjects];
+        //            NSArray *reversedArray = [[self.roomsArray reverseObjectEnumerator] allObjects];
         
-            DetailRoomViewController *dvc = [segue destinationViewController];
-            NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-            Room *individual = self.roomsArray[indexPath.row];
-            dvc.room = individual;
+        DetailRoomViewController *dvc = [segue destinationViewController];
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        Room *individual = self.roomsArray[indexPath.row];
+        dvc.room = individual;
     }
 }
 
@@ -214,7 +219,7 @@
         view.multipleTouchEnabled = NO;
         view.animatesDrop = YES;
         
-            }
+    }
     return view;
 }
 
