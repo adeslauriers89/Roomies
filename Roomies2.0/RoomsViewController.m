@@ -158,11 +158,20 @@
     cell.roomDescriptionLabel.text = [individual objectForKey:@"roomTitle"];
     if (!cell.roomImageView.image) {
         cell.roomImageView.alpha = 0;
+        
+        /**
+         -loadInBackground is an asynchronous operation:
+         By the time the operation finishes, 'cell' might be in use by another indexPath.
+         You should make sure to get the right cell for a given indexPath.
+         */
         [cell.roomImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
-            cell.roomImageView.image = image;
-            [UIView animateWithDuration:0.3 animations:^{
-                cell.roomImageView.alpha = 1;
-            }];
+            RoomCustomTableViewCell * aCell = [tableView cellForRowAtIndexPath:indexPath];
+            if (aCell) {
+                aCell.roomImageView.image = image;
+                [UIView animateWithDuration:0.3 animations:^{
+                    aCell.roomImageView.alpha = 1;
+                }];
+            }
         }];
     }
     
