@@ -12,15 +12,15 @@
 #import "RoomCustomTableViewCell.h"
 #import "Room.h"
 #import "DetailRoomViewController.h"
+#import "RoomiesLocationManager.h"
 #import <Corelocation/CLGeocoder.h>
 #import <Corelocation/CLPlacemark.h>
 #import <AddressBookUI/AddressBookUI.h>
 
-
 #define zoomingMapArea 5800
 
-
 @interface RoomsViewController () <UITableViewDataSource, MKMapViewDelegate>
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *roomSegmentControl;
@@ -29,7 +29,6 @@
 @property (nonatomic, strong) id<MKAnnotation> annotation;
 @property (nonatomic, strong) Room *room;
 @property (nonatomic, strong) NSString *dollarSign;
-@property (nonatomic, retain) CLLocationManager *locationManager;
 @property (nonatomic) UIRefreshControl *refreshControl;
 
 @end
@@ -90,11 +89,11 @@
     
     [self.mapView setHidden:YES];
     
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
-    if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-        [self.locationManager requestWhenInUseAuthorization];
-    };
+    [[RoomiesLocationManager sharedManager] addDelegateObserver:self];
+    
+    if ([[[RoomiesLocationManager sharedManager] locationManager] respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [[[RoomiesLocationManager sharedManager] locationManager] requestWhenInUseAuthorization];
+    }
     
     [self.tableView addSubview:self.refreshControl];
     
@@ -112,6 +111,10 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+}
+
+- (void)dealloc {
+    [[RoomiesLocationManager sharedManager] removeDelegateObserver:self];
 }
 
 -(void)updateRooms {
@@ -238,10 +241,10 @@
     self.annotationWasTapped = YES;
     self.annotation = view.annotation;
 }
-#pragma mark - Corelocation Delegate
+
+#pragma mark - @protocol <CLLocationManagerDelegate>
+
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    
-    
     if (status == kCLAuthorizationStatusAuthorizedAlways || status == kCLAuthorizationStatusAuthorizedWhenInUse) {
         self.mapView.showsUserLocation = YES;
     }
