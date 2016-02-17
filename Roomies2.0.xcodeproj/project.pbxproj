@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AFE0E231C741D0700BD68B7 /* RoomiesDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE0E221C741D0700BD68B7 /* RoomiesDatabase.m */; };
+		5AFE0E261C741D5200BD68B7 /* ParseStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE0E251C741D5200BD68B7 /* ParseStore.m */; };
 		5C7BE215574CE88A56DCA2D3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA47A6244639B8483D48AB6 /* Pods.framework */; };
 		A62E3E121C6A734200D440B5 /* MyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62E3E111C6A734200D440B5 /* MyProfileViewController.m */; };
 		A62E3E181C6A828C00D440B5 /* Room.m in Sources */ = {isa = PBXBuildFile; fileRef = A62E3E171C6A828C00D440B5 /* Room.m */; };
@@ -50,6 +52,11 @@
 
 /* Begin PBXFileReference section */
 		302EE848CEEE5F35D983A09F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5AFE0E211C741D0700BD68B7 /* RoomiesDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoomiesDatabase.h; sourceTree = "<group>"; };
+		5AFE0E221C741D0700BD68B7 /* RoomiesDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoomiesDatabase.m; sourceTree = "<group>"; };
+		5AFE0E241C741D5200BD68B7 /* ParseStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParseStore.h; sourceTree = "<group>"; };
+		5AFE0E251C741D5200BD68B7 /* ParseStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParseStore.m; sourceTree = "<group>"; };
+		5AFE0E271C741D7300BD68B7 /* DatabaseStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseStore.h; sourceTree = "<group>"; };
 		8857A49DB50FC13692C91EAF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A62E3E101C6A734200D440B5 /* MyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfileViewController.h; sourceTree = "<group>"; };
 		A62E3E111C6A734200D440B5 /* MyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfileViewController.m; sourceTree = "<group>"; };
@@ -131,6 +138,18 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5AFE0E201C741CE500BD68B7 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				5AFE0E271C741D7300BD68B7 /* DatabaseStore.h */,
+				5AFE0E211C741D0700BD68B7 /* RoomiesDatabase.h */,
+				5AFE0E221C741D0700BD68B7 /* RoomiesDatabase.m */,
+				5AFE0E241C741D5200BD68B7 /* ParseStore.h */,
+				5AFE0E251C741D5200BD68B7 /* ParseStore.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
 		A638F4211C6AA215000F42D3 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,9 +223,12 @@
 		A683FE8E1C68ED740027C720 /* Roomies2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				A683FE921C68ED740027C720 /* AppDelegate.h */,
+				A683FE931C68ED740027C720 /* AppDelegate.m */,
 				A638F4211C6AA215000F42D3 /* ViewControllers */,
 				A683FED81C6965220027C720 /* Views */,
 				A683FEC61C68EFF00027C720 /* Model */,
+				5AFE0E201C741CE500BD68B7 /* Database */,
 				A638F4241C6AA2D3000F42D3 /* UI */,
 				A683FE8F1C68ED740027C720 /* Supporting Files */,
 			);
@@ -248,8 +270,6 @@
 				A62E3E171C6A828C00D440B5 /* Room.m */,
 				A62E3E191C6A82BF00D440B5 /* RoomieUser.h */,
 				A62E3E1A1C6A82BF00D440B5 /* RoomieUser.m */,
-				A683FE921C68ED740027C720 /* AppDelegate.h */,
-				A683FE931C68ED740027C720 /* AppDelegate.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -467,10 +487,12 @@
 				A638F4201C6AA004000F42D3 /* UIViewController+Login.m in Sources */,
 				A683FE911C68ED740027C720 /* main.m in Sources */,
 				A67D770F1C6997D0008F4A11 /* AddRoomViewController.m in Sources */,
+				5AFE0E231C741D0700BD68B7 /* RoomiesDatabase.m in Sources */,
 				A683FEC91C68F0E00027C720 /* MainMenuViewController.m in Sources */,
 				A683FED41C6962410027C720 /* DetailPeopleViewController.m in Sources */,
 				A683FEDB1C69655E0027C720 /* RoomCustomTableViewCell.m in Sources */,
 				A683FECC1C68F3750027C720 /* RoomsViewController.m in Sources */,
+				5AFE0E261C741D5200BD68B7 /* ParseStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
