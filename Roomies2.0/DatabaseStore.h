@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ DatabaseStore is an abstract class to which various database stores may conform.
+ */
 @protocol DatabaseStore <NSObject>
 
 @required
