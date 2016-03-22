@@ -25,19 +25,15 @@
 
 
 - (CLLocationCoordinate2D)coordinate {
-    
-    CLLocationCoordinate2D temp = CLLocationCoordinate2DMake(self.lat.floatValue, self.lng.floatValue);
+    CLLocationCoordinate2D temp = CLLocationCoordinate2DMake(self.lat.doubleValue, self.lng.doubleValue);
     return temp;
 }
 
-+(void)load {
++ (void)load {
     [self registerSubclass];
 }
 
-
-
 + (NSString *)parseClassName {
-    
     return @"Room";
 }
 
