@@ -41,6 +41,7 @@
     self.dollarSign = @"$";
     
     PFQuery *query = [PFQuery queryWithClassName:@"Room"];
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
         self.roomsArray = [objects mutableCopy];
@@ -55,11 +56,10 @@
                 //NSLog(@"%@",roomObjectIDSet);
         }
        
-
         }
         
         
-        for (Room *room in self.roomsArray) {
+          for (Room *room in self.roomsArray) {
             
             
             CLGeocoder *geocoder = [[CLGeocoder alloc] init];
@@ -185,14 +185,11 @@
         
         DetailRoomViewController *dvc = [segue destinationViewController];
         
-        
         Room *myRoom = (Room*)sender;
         dvc.room = myRoom;
         
     } else if ([segue.identifier isEqualToString:@"showRoomDVC"]){
-        
-        //            NSArray *reversedArray = [[self.roomsArray reverseObjectEnumerator] allObjects];
-        
+    
         DetailRoomViewController *dvc = [segue destinationViewController];
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
         Room *individual = self.roomsArray[indexPath.row];

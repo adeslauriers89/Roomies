@@ -72,7 +72,7 @@
             MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
             mc.mailComposeDelegate = self;
             [self presentViewController:mc animated:YES completion:NULL];
-            NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
+            NSArray *toRecipents = [NSArray arrayWithObject:@"adeslauriers89@gmail.com"];
             [mc setToRecipients:toRecipents];
         }
     } else {

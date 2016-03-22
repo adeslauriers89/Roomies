@@ -13,6 +13,7 @@
 #import <MessageUI/MessageUI.h>
 
 @interface DetailRoomViewController () <PFLogInViewControllerDelegate, MFMailComposeViewControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet PFImageView *roomImageView;
 @property (weak, nonatomic) IBOutlet UILabel *roomPrice;
 @property (weak, nonatomic) IBOutlet UITextView *roomDetailTextView;
@@ -84,8 +85,7 @@
         default:
             break;
     }
-    
-    
+
     [self dismissViewControllerAnimated:YES completion:NULL];
     
 }

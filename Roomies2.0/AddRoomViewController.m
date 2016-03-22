@@ -83,6 +83,7 @@
     newRoom.dateAvailable = self.dateAvailableTextField.text;
     
     double compressionRatio = 1;
+    
     NSData *pictureData = UIImagePNGRepresentation(self.imageToUpload.image);
     while ([pictureData length]>500000) {
         compressionRatio = compressionRatio*0.5;
